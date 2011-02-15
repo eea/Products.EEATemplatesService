@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.1-dev - (unreleased)
-----------------------
+1.1 - (2011-02-15)
+------------------
  * Feature: eggified package to Products.EEATemplatesService [ichimdav #2931]
  * Feature: rewrite patches to use collective.monkeypatcher and eea.monkeypatch [tiberich #4066]
  * Feature: trigger ObjectModifiedEvent when saving in portal resource registries [tiberich #4085]
@@ -10,3 +10,4 @@ Changelog
 1.0
 ---
  * Generated skeleton product from DIYPloneStyle.
+

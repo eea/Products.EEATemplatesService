@@ -1,0 +1,2 @@
+<metal:block use-macro="here/global_defines/macros/defines" />
+<head metal:use-macro="here/sitemap/macros/sitemap-content" />

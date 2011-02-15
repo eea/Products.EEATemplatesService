@@ -1,0 +1,13 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <browser:page
+      for="*"
+      name="invalidateClientsCache"
+      class=".cache.ClientsCache"
+      allowed_interface=".interfaces.IClientsCache"
+      permission="zope.Public"
+      />
+      
+</configure>

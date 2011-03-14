@@ -1,7 +1,7 @@
 from cStringIO import StringIO
 
-from Products.EEATemplatesService.Extensions.utils import *
-from Products.EEATemplatesService.config import *
+#from Products.EEATemplatesService.Extensions.utils import *
+#from Products.EEATemplatesService.config import *
 
 def install(self):
     out = StringIO()
@@ -12,5 +12,6 @@ def install(self):
 
 def uninstall(self):
     out = StringIO()
+    return out.getvalue()
 
 

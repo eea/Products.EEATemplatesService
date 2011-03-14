@@ -27,7 +27,7 @@ class CacheTestCase(base.EEATemplatesService):
             # If anything remains in our response queue, it means the test
             # failed (but - we give it a little time to stop.)
             if self.httpd is not None:
-                for i in range(10):
+                for _i in range(10):
                     if self.httpd.response_queue.empty():
                         break
                     time.sleep(0.1)

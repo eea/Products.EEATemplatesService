@@ -1,7 +1,7 @@
 from Globals import package_home
 from Products.CMFCore.DirectoryView import addDirectoryViews
 from Products.CMFCore.utils import getToolByName
-import os, string
+import os 
 
 
 def getSkinsFolderNames(globals, skins_dir='skins'):
@@ -21,7 +21,8 @@ def setupSkin(self, out, globals, skin_selection, make_default,
 
         # Get the skin layers of the base skin and convert to an array
         layers = skins_tool.getSkinPath(base_skin)
-        layers = map(string.strip, string.split(layers, ','))
+        #layers = map(str.strip, str.split(layers, ','))
+        layers = [layer.strip() for layer in layers.split(',')]
 
         # Add the skin folders to the layers, under 'custom'
         filenames = skin_selection.get('layers',

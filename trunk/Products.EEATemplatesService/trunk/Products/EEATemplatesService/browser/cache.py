@@ -4,7 +4,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from zope.interface import implements
 from interfaces import IClientsCache
-from Products.CMFSquidTool.queue import queue
+#from Products.CMFSquidTool.queue import queue
 from Products.CMFSquidTool.utils import pruneUrl
 
 class ClientsCache(BrowserView):
@@ -12,8 +12,8 @@ class ClientsCache(BrowserView):
     implements(IClientsCache)
     
     def __init__(self, context, request):
-	self.context = context
-	self.request = request
+        self.context = context
+        self.request = request
 	
     def __call__(self):
         props = getToolByName(self.context, 'portal_properties')
@@ -25,14 +25,14 @@ class ClientsCache(BrowserView):
             squid = getToolByName(self.context, 'portal_squid')
             purge_urls = squid.computePurgeUrls(ts_props.getProperty('template_urls', []))
             for url in purge_urls:
-                status, xcache, xerror = pruneUrl(url, 'PURGE')
+                _status, _xcache, _xerror = pruneUrl(url, 'PURGE')
                 report += 'squid: %s\r\n' % url
                 
             for url in ts_props.getProperty('external_urls', []):
                 try:
-                    f = urllib.urlopen(url)
+                    urllib.urlopen(url)
                     report += 'Cache invalidated. URL: %s\r\n' % url
-                except:
+                except IOError:
                     report += 'Failed to invalidate cache, URL: %s\r\n' % url
 
         return report

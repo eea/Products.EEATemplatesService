@@ -15,7 +15,7 @@ def manage_saveStylesheets(self, REQUEST=None):
 
     Updates the whole sequence. For editing and reordering.
     """
-    self.original_manage_saveStylesheets(REQUEST)
+    self.old_manage_saveStylesheets(REQUEST)
     notify(ObjectModifiedEvent(self))
     if REQUEST:
         portal_url = getToolByName(self, 'portal_url')()
@@ -30,7 +30,7 @@ def manage_saveScripts(self, REQUEST=None):
     Updates the whole sequence. For editing and reordering.
     """
 
-    self.original_manage_saveScripts(REQUEST)
+    self.old_manage_saveScripts(REQUEST)
     notify(ObjectModifiedEvent(self))
     if REQUEST:
         portal_url = getToolByName(self, 'portal_url')()

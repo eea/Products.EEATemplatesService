@@ -9,16 +9,16 @@
         description="Monkeypatch portal CSS registry"
         class="Products.ResourceRegistries.tools.CSSRegistry.CSSRegistryTool"
         original="manage_saveStylesheets"
+        preserveOriginal=True
         replacement=".patches.manage_saveStylesheets"
-        handler="eea.monkeypatch.apply_patch"
         />
 
     <monkey:patch 
         description="Monkeypatch portal JS registry"
         class="Products.ResourceRegistries.tools.JSRegistry.JSRegistryTool"
         original="manage_saveScripts"
+        preserveOriginal=True
         replacement=".patches.manage_saveScripts"
-        handler="eea.monkeypatch.apply_patch"
         />
 
 </configure>

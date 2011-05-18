@@ -5,7 +5,7 @@ from Products.Five.browser import BrowserView
 from zope.interface import implements
 from interfaces import IClientsCache
 #from Products.CMFSquidTool.queue import queue
-from Products.CMFSquidTool.utils import pruneUrl
+#from Products.CMFSquidTool.utils import pruneUrl
 
 class ClientsCache(BrowserView):
 

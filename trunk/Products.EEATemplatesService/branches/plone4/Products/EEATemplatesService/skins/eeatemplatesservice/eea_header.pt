@@ -1,2 +1,1 @@
-<metal:block use-macro="here/global_defines/macros/defines" />
-<head metal:use-macro="here/portal_top/macros/eea" />
+ <div tal:replace="structure context/@@viewlets/plone.header" />

@@ -1,24 +1,35 @@
 <configure xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:monkey="http://namespaces.plone.org/monkey">
 
     <include package=".browser" />
+<cmf:registerDirectory name="skins" directory="skins" recursive="True" />
 
-    <monkey:patch 
-        description="Monkeypatch portal CSS registry"
-        class="Products.ResourceRegistries.tools.CSSRegistry.CSSRegistryTool"
-        original="manage_saveStylesheets"
-        preserveOriginal=True
-        replacement=".patches.manage_saveStylesheets"
-        />
+  <genericsetup:registerProfile
+      name="default"
+      title="Products.EEATemplatesService"
+      directory="profiles/default"
+      description='Extension profile for the Products.EEATemplatesService'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
-    <monkey:patch 
-        description="Monkeypatch portal JS registry"
-        class="Products.ResourceRegistries.tools.JSRegistry.JSRegistryTool"
-        original="manage_saveScripts"
-        preserveOriginal=True
-        replacement=".patches.manage_saveScripts"
-        />
+    <!--<monkey:patch -->
+    <!--    description="Monkeypatch portal CSS registry"-->
+    <!--    class="Products.ResourceRegistries.tools.CSSRegistry.CSSRegistryTool"-->
+    <!--    original="manage_saveStylesheets"-->
+    <!--    preserveOriginal=True-->
+    <!--    replacement=".patches.manage_saveStylesheets"-->
+    <!--    />-->
+
+    <!--<monkey:patch -->
+    <!--    description="Monkeypatch portal JS registry"-->
+    <!--    class="Products.ResourceRegistries.tools.JSRegistry.JSRegistryTool"-->
+    <!--    original="manage_saveScripts"-->
+    <!--    preserveOriginal=True-->
+    <!--    replacement=".patches.manage_saveScripts"-->
+    <!--    />-->
 
 </configure>

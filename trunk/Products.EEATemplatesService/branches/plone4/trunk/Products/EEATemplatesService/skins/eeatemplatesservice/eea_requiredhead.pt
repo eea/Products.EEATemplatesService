@@ -1,3 +1,0 @@
-<metal:block use-macro="here/global_defines/macros/defines" />
-<metal:block use-macro="container/templates_defines/macros/defines" />
-<head metal:use-macro="here/header/macros/head" />

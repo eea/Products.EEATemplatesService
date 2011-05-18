@@ -1,2 +1,0 @@
-<metal:block use-macro="here/global_defines/macros/defines" />
-<head metal:use-macro="here/footer/macros/portal_footer" />

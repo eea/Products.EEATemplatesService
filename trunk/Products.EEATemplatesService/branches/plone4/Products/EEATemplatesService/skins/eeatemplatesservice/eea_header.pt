@@ -1,1 +1,1 @@
- <div tal:replace="structure context/@@viewlets/plone.header" />
+<div tal:replace="structure context/@@viewlets/plone.header" />

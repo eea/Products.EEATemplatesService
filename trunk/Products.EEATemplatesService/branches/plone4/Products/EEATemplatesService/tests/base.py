@@ -1,3 +1,5 @@
+""" Base test module
+"""
 from Products.PloneTestCase import PloneTestCase
 from Products.PloneTestCase.layer import onsetup
 from Products.Five import zcml
@@ -20,11 +22,12 @@ profile_registry.registerProfile(
 
 @onsetup
 def setup_eeacontenttypes():
+    """ setup_eeacontenttypes test setup function """
     fiveconfigure.debug_mode = True
     import Products.Five
     import Products.CMFSquidTool
     zcml.load_config('meta.zcml', Products.Five)
-    zcml.load_config('configure.zcml', Products.CMFSquidTool)    
+    zcml.load_config('configure.zcml', Products.CMFSquidTool)
     fiveconfigure.debug_mode = False
 
     PloneTestCase.installProduct('Five')
@@ -34,7 +37,8 @@ def setup_eeacontenttypes():
 
 
 setup_eeacontenttypes()
-PloneTestCase.setupPloneSite(extension_profiles=['EEATemplatesService:default', 'EEATemplatesService:testfixture'], products=PRODUCTS)
+PloneTestCase.setupPloneSite(extension_profiles=['EEATemplatesService:default',
+                        'EEATemplatesService:testfixture'], products=PRODUCTS)
 
 class EEATemplatesService(PloneTestCase.FunctionalTestCase):
-    """ """
+    """ EEATemplatesService FunctionalTestCase class """

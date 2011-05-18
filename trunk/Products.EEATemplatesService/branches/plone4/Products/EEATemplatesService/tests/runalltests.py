@@ -1,3 +1,5 @@
+""" Run all tests module
+"""
 #
 # Runs all tests in the current directory
 #
@@ -8,10 +10,7 @@
 #   python /path/to/Zope/utilities/testrunner.py -qa
 #
 
-import os, sys
-if __name__ == '__main__':
-    execfile(os.path.join(sys.path[0], 'framework.py'))
-
+import os
 import unittest
 TestRunner = unittest.TextTestRunner
 suite = unittest.TestSuite()

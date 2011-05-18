@@ -4,7 +4,7 @@
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.ResourceRegistries import permissions
-from zope.app.event.objectevent import ObjectModifiedEvent
+from zope.lifecycleevent import ObjectModifiedEvent
 from zope.event import notify
 
 

@@ -1,3 +1,5 @@
+""" config.py module
+"""
 GLOBALS = globals()
 
 # CHANGE this tuple of python dictionnaries to list the different skin

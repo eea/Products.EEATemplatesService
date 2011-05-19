@@ -9,7 +9,7 @@
 
 
     <include package=".browser" />
-    <include file="patches.zcml" />
+   <include file="patches.zcml" />
     
     <genericsetup:registerProfile
         name="default"
@@ -19,4 +19,11 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <genericsetup:registerProfile
+        name="testfixture"
+        title="Products.EEATemplatesService"
+        directory="profiles/testfixture"
+        description='Extension profile for the Products.EEATemplatesService'
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
 </configure>

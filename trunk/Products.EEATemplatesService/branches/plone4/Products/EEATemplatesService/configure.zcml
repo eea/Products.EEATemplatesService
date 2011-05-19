@@ -1,16 +1,19 @@
 <configure xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:cmf="http://namespaces.zope.org/cmf"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="eea">
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:cmf="http://namespaces.zope.org/cmf"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           i18n_domain="eea">
 
     <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
 
+    <include package="collective.fastview" />
+    <include package="collective.monkeypatcher" />
 
     <include package=".browser" />
-   <!--<include file="patches.zcml" />-->
-    
+
+    <!-- include file="patches.zcml" / -->
+
     <genericsetup:registerProfile
         name="default"
         title="Products.EEATemplatesService"
@@ -26,4 +29,5 @@
         description='Extension profile for the Products.EEATemplatesService'
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
+
 </configure>

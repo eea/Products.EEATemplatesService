@@ -1,6 +1,3 @@
- 
-
-
 Recook resources in portal_css
 
   >>> from Products.PloneTestCase.setup import portal_owner, default_password
@@ -37,5 +34,3 @@ Recook resources in portal_css
   Cache invalidated. URL: http://localhost:8765/templates_client/invalidate_cache
   Failed to invalidate cache, URL: http://dummy/templates_client/invalidate_cache
   <BLANKLINE>
-
-  

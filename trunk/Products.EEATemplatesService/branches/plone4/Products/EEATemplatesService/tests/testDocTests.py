@@ -1,33 +1,40 @@
 # -*- coding: utf-8 -*-
-""" testDocTests module 
+""" DocTests
 """
-
 from Products.EEATemplatesService.tests import base
 import unittest
 from zope.testing import doctest
-
+from Testing.ZopeTestCase import FunctionalDocFileSuite
 from Products.CMFCore.utils import getToolByName
 #from Products.CMFSquidTool.utils import stopThreads
 #from Products.CMFSquidTool.tests.test_connections import start_proxied_server
 import time
 
+OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
+               doctest.ELLIPSIS |
+               doctest.NORMALIZE_WHITESPACE)
+
 class CacheTestCase(base.EEATemplatesService):
-    """ CacheTestCase test class """
+    """ CacheTestCase test class
+    """
+
     def afterSetUp(self):
-        """ afterSetUp test method """
+        """ afterSetUp test method
+        """
         self.setRoles(['Manager'])
         cacheTool = getToolByName(self.portal, 'portal_cache_settings', None)
         cacheTool.setProxyPurgeConfig('custom-rewrite')
         cacheTool.setSquidURLs(['http://127.0.0.1:3128'])
         cacheTool.setDomains(['http://nohost:80'])
         cacheTool.setEnabled(True)
-        squidTool = getToolByName(self.portal, 'portal_squid', None)        
+        squidTool = getToolByName(self.portal, 'portal_squid', None)
         squidTool.setUrlExpression(
                 'python:object.portal_cache_settings.getUrlsToPurge(object)')
         self.httpd, self.httpt = start_proxied_server()
-        
+
     def beforeTearDown(self):
-        """ beforeTearDown test method """
+        """ beforeTearDown test method
+        """
         try:
             # If anything remains in our response queue, it means the test
             # failed (but - we give it a little time to stop.)
@@ -49,16 +56,10 @@ class CacheTestCase(base.EEATemplatesService):
                 self.httpt = None
 
 def test_suite():
-    """ main test_suite function """
-    from Testing.ZopeTestCase import FunctionalDocFileSuite
-
+    """ main test_suite function
+    """
     return unittest.TestSuite((
         FunctionalDocFileSuite('cache.txt',
                      test_class = CacheTestCase,
                      package = 'Products.EEATemplatesService.browser',
-                     optionflags=doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS,
-                     ),
-        ))
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
+                     optionflags= OPTIONFLAGS, ), ))

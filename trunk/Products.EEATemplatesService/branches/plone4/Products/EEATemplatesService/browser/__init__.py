@@ -1,2 +1,2 @@
-""" browser init
+""" Browser package
 """

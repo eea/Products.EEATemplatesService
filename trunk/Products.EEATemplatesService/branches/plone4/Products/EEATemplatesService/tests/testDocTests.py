@@ -7,8 +7,8 @@ import unittest
 from zope.testing import doctest
 
 from Products.CMFCore.utils import getToolByName
-from Products.CMFSquidTool.utils import stopThreads
-from Products.CMFSquidTool.tests.test_connections import start_proxied_server
+#from Products.CMFSquidTool.utils import stopThreads
+#from Products.CMFSquidTool.tests.test_connections import start_proxied_server
 import time
 
 class CacheTestCase(base.EEATemplatesService):

@@ -1,0 +1,21 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           i18n_domain="eea">
+
+    <genericsetup:registerProfile
+        name="default"
+        title="Products.EEATemplatesService default"
+        directory="profiles/default"
+        description='Extension profile for the Products.EEATemplatesService'
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:registerProfile
+        name="testfixture"
+        title="Products.EEATemplatesService test fixture"
+        directory="profiles/testfixture"
+        description='Extension profile for the Products.EEATemplatesService used for tests'
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>

@@ -3,7 +3,7 @@ Changelog
 
 4.0-dev - (unreleased)
 ----------------------
-  * TODO: clean tests and replace CMFSquid logic with plone.app.caching
+  * TODO: clean tests and replace CMFSquid logic with plone.app.caching, plone4
   * Feature: Plone 4.0.4 compatible release [ichimdav #4312]
   * Change: removed dependency to eea.monkeypatch [ghicaale #4312]
   * Cleanup: of pyflakes compiler errors [ichimdav #4141]

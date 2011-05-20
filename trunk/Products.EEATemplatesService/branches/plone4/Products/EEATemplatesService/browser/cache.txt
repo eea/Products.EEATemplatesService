@@ -11,7 +11,6 @@ Recook resources in portal_css
   >>> browser.getControl(name='__ac_password').value = default_password
   >>> browser.getControl(name='submit').click()
   >>> browser.open(self.portal.portal_css.absolute_url() + '/manage_cssForm')
-  >>> import pdb; pdb.set_trace()
   >>> browser.getControl('Save', index=0).click()
   >>> browser.url
   'http://nohost/plone/@@invalidateClientsCache'
@@ -21,18 +20,22 @@ Recook resources in portal_css
   >>> browser.url
   'http://nohost/plone/@@invalidateClientsCache'
 
+#TODO: plone4, we don use portal_squid anymore
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead?site=eunis
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead?site=default
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead?jsdisable='jquery'
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getHeader
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getHeader?tabselected=products
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getHeader?tabselected=themes
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getFooter
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getBaseBreadcrumb
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getSubNavigation
+squid: http://127.0.0.1:3128/http/localhost/81/templates/getSitemap
+Cache invalidated. URL: http://localhost:8765/templates_client/invalidate_cache
+Failed to invalidate cache, URL: http://dummy/templates_client/invalidate_cache
+<BLANKLINE>
+
   >>> print self.portal.restrictedTraverse('@@invalidateClientsCache')()
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead?site=eunis
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead?site=default
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getRequiredHead?jsdisable='jquery'
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getHeader
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getHeader?tabselected=products
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getHeader?tabselected=themes
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getFooter
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getBaseBreadcrumb
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getSubNavigation
-  squid: http://127.0.0.1:3128/http/localhost/81/templates/getSitemap
-  Cache invalidated. URL: http://localhost:8765/templates_client/invalidate_cache
   Failed to invalidate cache, URL: http://dummy/templates_client/invalidate_cache
   <BLANKLINE>

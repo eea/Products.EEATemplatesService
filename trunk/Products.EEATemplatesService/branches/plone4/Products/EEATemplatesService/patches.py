@@ -12,7 +12,7 @@ def manage_saveStylesheets(self, REQUEST=None):
     """ Save stylesheets from the ZMI.
         Updates the whole sequence. For editing and reordering.
     """
-    self.old_manage_saveStylesheets(REQUEST)
+    self._old_manage_saveStylesheets(REQUEST)
     notify(ObjectModifiedEvent(self))
     if REQUEST:
         portal_url = getToolByName(self, 'portal_url')()
@@ -24,7 +24,7 @@ def manage_saveScripts(self, REQUEST=None):
     """ Save scripts from the ZMI.
         Updates the whole sequence. For editing and reordering.
     """
-    self.old_manage_saveScripts(REQUEST)
+    self._old_manage_saveScripts(REQUEST)
     notify(ObjectModifiedEvent(self))
     if REQUEST:
         portal_url = getToolByName(self, 'portal_url')()

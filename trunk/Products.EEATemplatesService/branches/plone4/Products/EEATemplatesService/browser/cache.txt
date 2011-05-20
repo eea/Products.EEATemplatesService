@@ -5,11 +5,13 @@ Recook resources in portal_css
   >>> browser = Browser()
   >>> browser.handleErrors = False
   >>> self.portal.error_log._ignored_exceptions = ()
-  >>> browser.open(self.portal.absolute_url())
+  >>> url = self.portal.absolute_url() + '/login_form'
+  >>> browser.open(url)
   >>> browser.getControl(name='__ac_name').value = portal_owner
   >>> browser.getControl(name='__ac_password').value = default_password
   >>> browser.getControl(name='submit').click()
   >>> browser.open(self.portal.portal_css.absolute_url() + '/manage_cssForm')
+  >>> import pdb; pdb.set_trace()
   >>> browser.getControl('Save', index=0).click()
   >>> browser.url
   'http://nohost/plone/@@invalidateClientsCache'

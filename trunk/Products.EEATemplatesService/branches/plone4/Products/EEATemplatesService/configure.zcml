@@ -6,6 +6,10 @@
 
     <include package=".browser" />
 
+    <include file="profiles.zcml" />
+    <include file="skins.zcml" />
+
+    <!-- #TODO: plone4 -->
     <!-- include file="patches.zcml" / -->
 
 </configure>

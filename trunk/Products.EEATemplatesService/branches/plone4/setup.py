@@ -1,5 +1,5 @@
-""" setup.py """
-
+""" EEA Templates Service installer
+"""
 from setuptools import setup, find_packages
 import os
 

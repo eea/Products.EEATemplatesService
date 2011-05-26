@@ -4,17 +4,17 @@
 
     <genericsetup:registerProfile
         name="default"
-        title="Products.EEATemplatesService default"
+        title="EEA Templates Service default"
         directory="profiles/default"
-        description='Extension profile for the Products.EEATemplatesService'
+        description='Extension profile for the EEA Templates Service'
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
     <genericsetup:registerProfile
         name="testfixture"
-        title="Products.EEATemplatesService test fixture"
+        title="EEA Templates Service test fixture"
         directory="profiles/testfixture"
-        description='Extension profile for the Products.EEATemplatesService used for tests'
+        description='Extension profile for the EEA Templates Service used for tests'
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 

@@ -10,8 +10,8 @@ VERSION = open(os.path.join(*PATH)).read().strip()
 setup(
     name=NAME,
     version=VERSION,
-    description="EEATemplatesService is a products that provides simple http "
-                "services for the templates of a plone site",
+    description="EEA Templates Service is a products that provides simple "
+                "http services for the templates of a plone site",
     long_description=open("README.txt").read() + "\n" +
                      open(os.path.join("docs", "HISTORY.txt")).read(),
     url="https://svn.eionet.europa.eu/projects/"
@@ -21,7 +21,7 @@ setup(
            "Programming Language :: Python",
            "Topic :: Software Development :: Libraries :: Python Modules",
       ],
-    keywords='EEATemplatesService',
+    keywords='EEA Templates Service',
     author='Sasha Vincic (EEA), European Environment Agency',
     author_email='webadmin@eea.europa.eu',
     license='GPL',

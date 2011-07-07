@@ -3,21 +3,37 @@ Changelog
 
 4.0-dev - (unreleased)
 ----------------------
-  * TODO: clean tests and replace CMFSquid logic with plone.app.caching, plone4
-  * Feature: Plone 4.0.4 compatible release [ichimdav #4312]
-  * Change: removed dependency to eea.monkeypatch [ghicaale #4312]
-  * Cleanup: of pyflakes compiler errors [ichimdav #4141]
-  * Cleanup: of pylint violations [ichimdav #4140]
+
+* TODO: clean tests and replace CMFSquid logic with plone.app.caching, plone4
+
+* Change: removed dependency to eea.monkeypatch
+  [ghicaale #4312]
+
+* Cleanup: of pyflakes compiler errors
+  [ichimdav #4141]
+
+* Cleanup: of pylint violations
+  [ichimdav #4140]
+
+* Feature: Added upgrade steps
+  [voineali #4392]
+
+* Feature: Plone 4.x compatible release
+  [ichimdav #4312]
 
 1.1 - (2011-02-15)
 ------------------
- * Feature: eggified package to Products.EEATemplatesService [ichimdav #2931]
- * Feature: rewrite patches to use collective.monkeypatcher
-     and eea.monkeypatch [tiberich #4066]
- * Feature: trigger ObjectModifiedEvent when saving in
-     portal resource registries [tiberich #4085]
+
+* Feature: eggified package to Products.EEATemplatesService [ichimdav #2931]
+
+* Feature: rewrite patches to use collective.monkeypatcher
+  and eea.monkeypatch [tiberich #4066]
+
+* Feature: trigger ObjectModifiedEvent when saving in
+  portal resource registries [tiberich #4085]
+
 
 1.0
 ---
- * Generated skeleton product from DIYPloneStyle.
 
+* Generated skeleton product from DIYPloneStyle.

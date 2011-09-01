@@ -6,6 +6,8 @@ Changelog
 
 * TODO: clean tests and replace CMFSquid logic with plone.app.caching, plone4
 
+* Feature: patched KSSRegistryTool to invalidate cache after save [ghicaale #4395]
+
 * Change: removed dependency to eea.monkeypatch
   [ghicaale #4312]
 

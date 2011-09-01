@@ -7,17 +7,23 @@ from zope.lifecycleevent import ObjectModifiedEvent
 from zope.event import notify
 
 security = ClassSecurityInfo()
+
+def invalidateClientsCache(self):
+    """ Invalidate client cache
+    """
+    notify(ObjectModifiedEvent(self))
+    if REQUEST:
+        portal_url = getToolByName(self, 'portal_url')()
+        return REQUEST.RESPONSE.redirect(portal_url +
+                '/@@invalidateClientsCache')
+
 security.declareProtected(permissions.ManagePortal, 'manage_saveStylesheets')
 def manage_saveStylesheets(self, REQUEST=None):
     """ Save stylesheets from the ZMI.
         Updates the whole sequence. For editing and reordering.
     """
     self._old_manage_saveStylesheets(REQUEST)
-    notify(ObjectModifiedEvent(self))
-    if REQUEST:
-        portal_url = getToolByName(self, 'portal_url')()
-        return REQUEST.RESPONSE.redirect(portal_url +
-                '/@@invalidateClientsCache')
+    invalidateClientsCache(self)
 
 security.declareProtected(permissions.ManagePortal, 'manage_saveScripts')
 def manage_saveScripts(self, REQUEST=None):
@@ -25,8 +31,12 @@ def manage_saveScripts(self, REQUEST=None):
         Updates the whole sequence. For editing and reordering.
     """
     self._old_manage_saveScripts(REQUEST)
-    notify(ObjectModifiedEvent(self))
-    if REQUEST:
-        portal_url = getToolByName(self, 'portal_url')()
-        return REQUEST.RESPONSE.redirect(portal_url +
-                '/@@invalidateClientsCache')
+    invalidateClientsCache(self)
+
+security.declareProtected(permissions.ManagePortal, 'manage_saveKineticStylesheets')
+def manage_saveKineticStylesheets(self, REQUEST=None):
+    """ Save kineticstylesheets from the ZMI.
+        Updates the whole sequence. For editing and reordering.
+    """
+    self._old_manage_saveKineticStylesheets(REQUEST)
+    invalidateClientsCache(self)

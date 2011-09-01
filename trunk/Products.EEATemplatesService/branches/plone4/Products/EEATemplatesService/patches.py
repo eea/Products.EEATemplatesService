@@ -8,7 +8,7 @@ from zope.event import notify
 
 security = ClassSecurityInfo()
 
-def invalidateClientsCache(self):
+def invalidateClientsCache(self, REQUEST=None):
     """ Invalidate client cache
     """
     notify(ObjectModifiedEvent(self))
@@ -23,7 +23,7 @@ def manage_saveStylesheets(self, REQUEST=None):
         Updates the whole sequence. For editing and reordering.
     """
     self._old_manage_saveStylesheets(REQUEST)
-    invalidateClientsCache(self)
+    invalidateClientsCache(self, REQUEST)
 
 security.declareProtected(permissions.ManagePortal, 'manage_saveScripts')
 def manage_saveScripts(self, REQUEST=None):
@@ -31,7 +31,7 @@ def manage_saveScripts(self, REQUEST=None):
         Updates the whole sequence. For editing and reordering.
     """
     self._old_manage_saveScripts(REQUEST)
-    invalidateClientsCache(self)
+    invalidateClientsCache(self, REQUEST)
 
 security.declareProtected(permissions.ManagePortal, 'manage_saveKineticStylesheets')
 def manage_saveKineticStylesheets(self, REQUEST=None):
@@ -39,4 +39,5 @@ def manage_saveKineticStylesheets(self, REQUEST=None):
         Updates the whole sequence. For editing and reordering.
     """
     self._old_manage_saveKineticStylesheets(REQUEST)
-    invalidateClientsCache(self)
+    invalidateClientsCache(self, REQUEST)
+

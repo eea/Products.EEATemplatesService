@@ -30,16 +30,17 @@ class ClientsCache(BrowserView):
         ts_props = getattr(props, 'template_service', None)
         report = ''
 
-        # don't fail if EEATemplateService profile and config is not loaded
+        # Don't fail if EEATemplateService profile and config is not loaded
         if ts_props is not None:
             external_urls = ts_props.getProperty('external_urls', [])
             template_urls = ts_props.getProperty('template_urls', [])
 
             if PLONE_APP_CACHING_INSTALLED:
                 registry = queryUtility(IRegistry)
-                settings = registry.forInterface(ICachePurgingSettings, check=False)
+                settings = registry.forInterface(ICachePurgingSettings,
+                                                 check=False)
                 purger = getUtility(IPurger)
-                rewriter = IPurgePathRewriter(self.request, None)            
+                rewriter = IPurgePathRewriter(self.request, None)
                 caching_proxies = settings.cachingProxies
 
                 for template_url in template_urls:
@@ -49,7 +50,7 @@ class ClientsCache(BrowserView):
                             full_path = '%s%s' % (caching_proxy, path_to_purge)
                             purger.purgeAsync(full_path)
                             report += 'Varnish purged: %s\r\n' % full_path
-                    
+
             for url in external_urls:
                 try:
                     urllib.urlopen(url)

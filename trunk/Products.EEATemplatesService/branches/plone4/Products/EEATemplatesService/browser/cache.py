@@ -6,6 +6,16 @@ from Products.Five.browser import BrowserView
 from zope.interface import implements
 from Products.EEATemplatesService.browser.interfaces import IClientsCache
 
+try:
+    from plone.cachepurging.interfaces import IPurger
+    from plone.cachepurging.interfaces import IPurgePathRewriter
+    from plone.cachepurging.interfaces import ICachePurgingSettings
+    from plone.registry.interfaces import IRegistry
+    from zope.component import getUtility, queryUtility
+    PLONE_APP_CACHING_INSTALLED = True
+except ImportError:
+    PLONE_APP_CACHING_INSTALLED = False
+
 class ClientsCache(BrowserView):
     """ ClientsCache BrowserView
     """
@@ -25,17 +35,21 @@ class ClientsCache(BrowserView):
             external_urls = ts_props.getProperty('external_urls', [])
             template_urls = ts_props.getProperty('template_urls', [])
 
-            from plone.cachepurging.interfaces import IPurger
-            purger = getUtility(IPurger)
-            purger.purgeAsync(template_urls)
+            if PLONE_APP_CACHING_INSTALLED:
+                registry = queryUtility(IRegistry)
+                settings = registry.forInterface(ICachePurgingSettings, check=False)
+                purger = getUtility(IPurger)
+                rewriter = IPurgePathRewriter(self.request, None)            
+                caching_proxies = settings.cachingProxies
 
-            #TODO: fix me, we dont use portal_squid anymore, plone4
-            #squid = getToolByName(self.context, 'portal_squid')
-            #purge_urls = squid.computePurgeUrls(template_urls)
-            #for url in purge_urls:
-                #_status, _xcache, _xerror = pruneUrl(url, 'PURGE')
-                #report += 'squid: %s\r\n' % url
-
+                for template_url in template_urls:
+                    paths_to_purge = rewriter(template_url)
+                    for path_to_purge in paths_to_purge:
+                        for caching_proxy in caching_proxies:
+                            full_path = '%s%s' % (caching_proxy, path_to_purge)
+                            purger.purgeAsync(full_path)
+                            report += 'Varnish purged: %s\r\n' % full_path
+                    
             for url in external_urls:
                 try:
                     urllib.urlopen(url)

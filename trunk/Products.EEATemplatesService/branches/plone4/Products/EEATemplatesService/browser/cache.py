@@ -44,14 +44,16 @@ class ClientsCache(BrowserView):
                     rewriter = IPurgePathRewriter(self.request, None)
                     caching_proxies = settings.cachingProxies
 
-                    for template_url in template_urls:
-                        paths_to_purge = rewriter(template_url)
-                        for path_to_purge in paths_to_purge:
-                            for caching_proxy in caching_proxies:
-                                full_path = '%s%s' % (caching_proxy,
-                                                      path_to_purge)
-                                purger.purgeAsync(full_path)
-                                report += 'Varnish purged: %s\r\n' % full_path
+                    if caching_proxies:
+                        for template_url in template_urls:
+                            paths_to_purge = rewriter(template_url)
+                            for path_to_purge in paths_to_purge:
+                                for caching_proxy in caching_proxies:
+                                    full_path = '%s%s' % (caching_proxy,
+                                                          path_to_purge)
+                                    purger.purgeAsync(full_path)
+                                    report += 'Varnish purged: %s\r\n' % \
+                                                                    full_path
 
             for url in external_urls:
                 try:

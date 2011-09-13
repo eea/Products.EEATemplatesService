@@ -5,7 +5,7 @@ from Products.PloneTestCase.layer import onsetup
 from Products.Five import zcml
 from Products.Five import fiveconfigure
 import Products.EEATemplatesService
-
+    
 @onsetup
 def setup_eeacontenttypes():
     """ Setup eeacontenttypes
@@ -19,8 +19,8 @@ def setup_eeacontenttypes():
 
 setup_eeacontenttypes()
 PloneTestCase.setupPloneSite(extension_profiles=(
-    'Products.EEATemplatesService:default',
-    'Products.EEATemplatesService:testfixture'))
+        'Products.EEATemplatesService:default',
+        'Products.EEATemplatesService:testfixture'))
 
 class EEATemplatesService(PloneTestCase.FunctionalTestCase):
     """ EEATemplatesService FunctionalTestCase class

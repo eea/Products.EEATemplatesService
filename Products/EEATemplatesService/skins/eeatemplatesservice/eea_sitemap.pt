@@ -1,0 +1,11 @@
+  <h1>Site map</h1> 
+    
+    <p class="documentDescription"> 
+    An overview of the available content on this site. Keep the pointer still 
+    over an item for a few seconds to get its description.
+    </p> 
+     <ul id="portal-sitemap"
+            class="navTreeLevel0 visualNoMarker"
+            tal:define="view context/@@sitemap_view;">
+            <tal:sitemap replace="structure view/createSiteMap" />
+        </ul>

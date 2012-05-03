@@ -32,7 +32,8 @@ setup(
     install_requires=[
         "setuptools",
         "collective.fastview",
-        "collective.monkeypatcher"
+        "collective.monkeypatcher",
+        "lxml"
     ],
     entry_points="""
     # -*- Entry points: -*-

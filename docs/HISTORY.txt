@@ -3,6 +3,8 @@ Changelog
 
 4.2-dev - (unreleased)
 ----------------------
+* Feature: modified getRequiredHead to have the possibility to disable all kss & js
+  [szabozo0 #5095]
 
 4.1 - (2011-11-18)
 ------------------

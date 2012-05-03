@@ -8,4 +8,9 @@
                 allowed_interface=".interfaces.IClientsCache"
                 permission="zope.Public" />
 
+  <browser:page for="*"
+                name="getRequiredHead"
+                class=".externaltemplates.ExternalTemplates"
+                attribute="getRequiredHead"
+                permission="zope.Public" />
 </configure>

@@ -44,5 +44,23 @@ class ExternalTemplates(object):
 
     def getFooter(self):
         """return head template"""
-        return self.context.eea_footer()
+        footer = self.context.eea_footer()
+
+        tree = lxml.html.fromstring(footer)
+        links_to_remove = ['CMS login', 'Refresh this page']
+        links = {}
+        iterator = tree.iter()
+        while True:
+            try:
+                element = iterator.next()
+                for obj_value in element.values():
+                    if obj_value in links_to_remove:
+                        ascensors = element.iterancestors()
+                        parent = ascensors.next()
+                        links[element] = parent
+            except:
+                break
+        for (k,v) in links.items():
+            v.remove(k)
+        return lxml.html.tostring(tree)
 

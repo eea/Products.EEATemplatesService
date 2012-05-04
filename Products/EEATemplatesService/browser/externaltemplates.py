@@ -4,7 +4,7 @@ import lxml
 class ExternalTemplates(object):
     """external templates"""
     def getRequiredHead(self):
-        """required head"""
+        """return required head template"""
         jsdisable = getattr(self.request, 'jsdisable', '')
         portal_properties = { 'title' : 'Portal title' }
         self.context.REQUEST.set('jsdisable', jsdisable)
@@ -25,4 +25,24 @@ class ExternalTemplates(object):
                         break
 
             requiredhead = lxml.html.tostring(tree)
+
         return requiredhead
+
+    def getHeader(self):
+        """return head template"""
+        site = getattr(self.request, 'site', 'NotProvided')
+        tabselected = getattr(self.request, 'tabselected', 'dummyselectedid')
+        jsdisable = getattr(self.request, 'jsdisable', '')
+        self.context.REQUEST.set('jsdisable', jsdisable)
+        if site == 'NotProvided':
+            site = getattr(self.context, 'navigationmanager_site', 'default')
+        return self.context.eea_header(
+                                site=site,
+                                tabselected=tabselected,
+                                jsdisable=jsdisable)
+
+
+    def getFooter(self):
+        """return head template"""
+        return self.context.eea_footer()
+

@@ -1,5 +1,12 @@
 <metal:page define-macro="master"
             tal:define="view context/@@plone;">
+    <tal:block tal:condition="python:request['jsdisable'] == 'all'">
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/design.js"></script>
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/slide.js"></script>
+
+    </tal:block>
     <div id="header-holder">
         <div id="portal-top">
             <div tal:replace="structure provider:plone.portaltop" />

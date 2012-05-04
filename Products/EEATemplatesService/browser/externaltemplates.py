@@ -58,9 +58,9 @@ class ExternalTemplates(object):
                         ascensors = element.iterancestors()
                         parent = ascensors.next()
                         links[element] = parent
-            except:
+            except Exception:
                 break
-        for (k,v) in links.items():
+        for (k, v) in links.items():
             v.remove(k)
         return lxml.html.tostring(tree)
 

@@ -13,4 +13,14 @@
                 class=".externaltemplates.ExternalTemplates"
                 attribute="getRequiredHead"
                 permission="zope.Public" />
+  <browser:page for="*"
+                name="getHeader"
+                class=".externaltemplates.ExternalTemplates"
+                attribute="getHeader"
+                permission="zope.Public" />
+  <browser:page for="*"
+                name="getFooter"
+                class=".externaltemplates.ExternalTemplates"
+                attribute="getFooter"
+                permission="zope.Public" />
 </configure>

@@ -3,6 +3,8 @@ Changelog
 
 4.2-dev - (unreleased)
 ----------------------
+* Feature: updated external templates for new headers and footers
+  [szabozo0 #5095]
 * Feature: modified getRequiredHead to have the possibility to disable all kss & js
   [szabozo0 #5095]
 

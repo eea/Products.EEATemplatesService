@@ -36,11 +36,15 @@ class ExternalTemplates(object):
         self.context.REQUEST.set('jsdisable', jsdisable)
         if site == 'NotProvided':
             site = getattr(self.context, 'navigationmanager_site', 'default')
-        return self.context.eea_header(
+
+        header = self.context.eea_header(
                                 site=site,
                                 tabselected=tabselected,
                                 jsdisable=jsdisable)
 
+        tree = lxml.html.fromstring(header)
+        tree.make_links_absolute(self.context.absolute_url())
+        return lxml.html.tostring(tree)
 
     def getFooter(self):
         """return head template"""

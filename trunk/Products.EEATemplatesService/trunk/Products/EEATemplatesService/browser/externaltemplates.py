@@ -51,7 +51,10 @@ class ExternalTemplates(object):
         footer = self.context.eea_footer()
 
         tree = lxml.html.fromstring(footer)
-        links_to_remove = ['CMS login', 'Refresh this page']
+        links_to_remove = ['CMS login',
+                            'Refresh this page',
+                            'http://svn.eionet.europa.eu/projects/Zope/'+
+                            'browser/trunk/www.eea.europa.eu/trunk/docs']
         links = {}
         iterator = tree.iter()
         while True:

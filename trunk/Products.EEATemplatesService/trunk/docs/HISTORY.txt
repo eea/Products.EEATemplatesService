@@ -3,6 +3,9 @@ Changelog
 
 4.3-dev - (unreleased)
 ----------------------
+* Upgrade step:
+  - Publish /code/templates/template-service-api-v2
+  - Set /code/templates/template-services page as default view for /code/templates
 
 4.2 - (2012-05-09)
 ------------------

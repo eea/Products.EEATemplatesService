@@ -5,6 +5,8 @@
             tal:attributes="src string:${context/absolute_url}/design.js"></script>
         <script type="text/javascript"
             tal:attributes="src string:${context/absolute_url}/slide.js"></script>
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/global_searchbox.js"></script>
 
     </tal:block>
     <div id="header-holder">

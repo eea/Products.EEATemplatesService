@@ -24,7 +24,7 @@ class ExternalTemplates(object):
                         head.remove(link)
                         break
 
-            requiredhead = lxml.html.tostring(tree)
+            requiredhead = lxml.etree.tostring(tree)
 
         return requiredhead
 
@@ -44,7 +44,7 @@ class ExternalTemplates(object):
 
         tree = lxml.html.fromstring(header)
         tree.make_links_absolute(self.context.absolute_url())
-        return lxml.html.tostring(tree)
+        return lxml.etree.tostring(tree)
 
     def getFooter(self):
         """return footer template"""
@@ -69,5 +69,5 @@ class ExternalTemplates(object):
                 break
         for (k, v) in links.items():
             v.remove(k)
-        return lxml.html.tostring(tree)
+        return lxml.etree.tostring(tree)
 

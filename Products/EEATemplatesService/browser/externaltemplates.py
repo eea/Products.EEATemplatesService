@@ -47,7 +47,7 @@ class ExternalTemplates(object):
         return lxml.html.tostring(tree)
 
     def getFooter(self):
-        """return head template"""
+        """return footer template"""
         footer = self.context.eea_footer()
 
         tree = lxml.html.fromstring(footer)

@@ -3,6 +3,8 @@
 
 4.4-dev - (unreleased)
 ----------------------
+* Bug fix: fixed not closed tags on external templates
+  [szabozo0 refs #5095]
 * Bug fix: fixed markup of HISTORY.txt file
   [ciobabog refs #5231]
 

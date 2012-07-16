@@ -1,8 +1,8 @@
 ﻿Changelog
 =========
 
-4.5-dev - (unreleased)
-----------------------
+4.5 - (2012-07-16)
+------------------
 * Bug fix: Quickfix for empty html tags
   [szabozo0 refs #5358]
 

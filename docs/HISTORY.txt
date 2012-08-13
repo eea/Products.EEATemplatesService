@@ -3,6 +3,8 @@
 
 4.6-dev - (unreleased)
 ----------------------
+* Bug fix: remove login via lxml introduced by design feature #5443 refs #5446.
+  [demarant closes #5443]
 
 4.5 - (2012-07-16)
 ------------------

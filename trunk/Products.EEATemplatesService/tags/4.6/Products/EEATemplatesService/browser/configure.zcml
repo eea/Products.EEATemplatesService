@@ -1,0 +1,26 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="eea">
+
+  <browser:page for="*"
+                name="invalidateClientsCache"
+                class=".cache.ClientsCache"
+                allowed_interface=".interfaces.IClientsCache"
+                permission="zope.Public" />
+
+  <browser:page for="*"
+                name="getRequiredHead"
+                class=".externaltemplates.ExternalTemplates"
+                attribute="getRequiredHead"
+                permission="zope.Public" />
+  <browser:page for="*"
+                name="getHeader"
+                class=".externaltemplates.ExternalTemplates"
+                attribute="getHeader"
+                permission="zope.Public" />
+  <browser:page for="*"
+                name="getFooter"
+                class=".externaltemplates.ExternalTemplates"
+                attribute="getFooter"
+                permission="zope.Public" />
+</configure>

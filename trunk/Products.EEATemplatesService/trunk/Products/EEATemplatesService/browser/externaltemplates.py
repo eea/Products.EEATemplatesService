@@ -17,6 +17,10 @@ class ExternalTemplates(object):
         for title in head.findall('title'):
             head.remove(title)
 
+        for meta in head.findall('meta'):
+            if meta.get('name', '') in ('generator', 'viewport'):
+                head.remove(meta)
+
         if jsdisable == 'all':
             for script in head.findall('script'):
                 head.remove(script)

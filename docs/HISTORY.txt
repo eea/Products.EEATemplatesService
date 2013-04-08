@@ -3,7 +3,7 @@ Changelog
 
 4.7-dev - (unreleased)
 ----------------------
-* Bugfix: remove title from getRequiredHead call
+* Bugfix: remove title tag, generator and viewport meta tags from getRequiredHead call
   [szabozo0 refs #14002]
 
 4.6 - (2012-08-27)

@@ -11,9 +11,13 @@ class ExternalTemplates(object):
         requiredhead = self.context.eea_requiredhead(
                                 portal_properties=portal_properties,
                                 jsdisable=jsdisable)
+
+        tree = lxml.html.fromstring(requiredhead)
+        head = tree.findall('head')[0]
+        for title in head.findall('title'):
+            head.remove(title)
+
         if jsdisable == 'all':
-            tree = lxml.html.fromstring(requiredhead)
-            head = tree.findall('head')[0]
             for script in head.findall('script'):
                 head.remove(script)
 
@@ -24,7 +28,7 @@ class ExternalTemplates(object):
                         head.remove(link)
                         break
 
-            requiredhead = lxml.etree.tostring(tree)
+        requiredhead = lxml.etree.tostring(tree)
 
         return requiredhead
 

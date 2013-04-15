@@ -53,8 +53,12 @@ class ExternalTemplates(object):
         tree = lxml.html.fromstring(header)
         tree.make_links_absolute(self.context.absolute_url())
         #remove the plone login which should never be used by external systems.
-        login_element = tree.get_element_by_id('portal-personaltools-wrapper')
-        login_element.getparent().remove(login_element)
+        elementIdsToRemove = ['portal-personaltools-wrapper',
+                                'siteaction-login']
+        for elementId in elementIdsToRemove:
+            element = tree.get_element_by_id(elementId)
+            element.getparent().remove(element)
+
         return lxml.etree.tostring(tree)
 
     def getFooter(self):

@@ -1,0 +1,75 @@
+Changelog
+=========
+
+4.7 - (2013-04-17)
+------------------
+* Bugfix: remove login tab from getHeader call
+  [szabozo0 refs #14002]
+* Bugfix: remove title tag, generator and viewport meta tags from getRequiredHead call
+  [szabozo0 refs #14002]
+
+4.6 - (2012-08-27)
+------------------
+* Bug fix: remove login via lxml introduced by design feature #5443 refs #5446.
+  [demarant closes #5443]
+
+4.5 - (2012-07-16)
+------------------
+* Bug fix: Quickfix for empty html tags
+  [szabozo0 refs #5358]
+
+4.4 - (2012-07-09)
+------------------
+* Bug fix: fixed not closed tags on external templates
+  [szabozo0 refs #5095]
+* Bug fix: fixed markup of HISTORY.txt file
+  [ciobabog refs #5231]
+
+4.3 - (2012-05-15)
+------------------
+* Upgrade step:
+  - Publish /code/templates/template-service-api-v2
+  - Set /code/templates/template-services page as default view for /code/templates
+
+4.2 - (2012-05-09)
+------------------
+* Feature: updated external templates for new headers and footers
+  [szabozo0 #5095]
+* Feature: modified getRequiredHead to have the possibility to disable all kss & js
+  [szabozo0 #5095]
+
+4.1 - (2011-11-18)
+------------------
+* Rerelease broken egg
+
+4.0 - (2011-11-18)
+------------------
+* TODO: clean tests and replace CMFSquid logic with plone.app.caching, plone4
+* Feature: patched KSSRegistryTool to invalidate cache after save
+  [ghicaale #4395]
+* Change: removed dependency to eea.monkeypatch
+  [ghicaale #4312]
+* Cleanup: of pyflakes compiler errors
+  [ichimdav #4141]
+* Cleanup: of pylint violations
+  [ichimdav #4140]
+* Feature: Added upgrade steps
+  [voineali #4392]
+* Feature: Plone 4.x compatible release
+  [ichimdav #4312]
+
+1.1 - (2011-02-15)
+------------------
+* Feature: eggified package to Products.EEATemplatesService
+  [ichimdav #2931]
+* Feature: rewrite patches to use collective.monkeypatcher
+  and eea.monkeypatch
+  [tiberich #4066]
+* Feature: trigger ObjectModifiedEvent when saving in
+  portal resource registries
+  [tiberich #4085]
+
+1.0
+---
+* Generated skeleton product from DIYPloneStyle.
+

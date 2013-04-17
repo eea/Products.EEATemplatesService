@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+ <object name="template_service" meta_type="Plone Property Sheet">
+  <property name="title">template service</property>
+  <property name="template_urls" type="lines">
+    <element value="http/localhost/81/templates/getRequiredHead" />
+    <element value="http/localhost/81/templates/getRequiredHead?site=eunis" />
+    <element value="http/localhost/81/templates/getRequiredHead?site=default" />
+    <element value="http/localhost/81/templates/getRequiredHead?jsdisable='jquery'" />
+    <element value="http/localhost/81/templates/getHeader" />
+    <element value="http/localhost/81/templates/getHeader?tabselected=products" />
+    <element value="http/localhost/81/templates/getHeader?tabselected=themes" />
+    <element value="http/localhost/81/templates/getFooter" />
+    <element value="http/localhost/81/templates/getBaseBreadcrumb" />
+    <element value="http/localhost/81/templates/getSubNavigation" />
+    <element value="http/localhost/81/templates/getSitemap" />
+  </property>
+  <property name="external_urls" type="lines">
+   <element
+      value="http://dummy/templates_client/invalidate_cache"/>
+  </property>
+ </object>
+</object>

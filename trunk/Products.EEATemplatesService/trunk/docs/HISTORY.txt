@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.7-dev - (unreleased)
-----------------------
+4.7 - (2013-04-17)
+------------------
 * Bugfix: remove login tab from getHeader call
   [szabozo0 refs #14002]
 * Bugfix: remove title tag, generator and viewport meta tags from getRequiredHead call

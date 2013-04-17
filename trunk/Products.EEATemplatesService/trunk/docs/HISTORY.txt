@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.8-dev - (unreleased)
+----------------------
+
 4.7 - (2013-04-17)
 ------------------
 * Bugfix: remove login tab from getHeader call

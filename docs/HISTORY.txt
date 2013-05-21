@@ -3,6 +3,9 @@ Changelog
 
 4.8-dev - (unreleased)
 ----------------------
+* Bugfix: return only resources through getHeader avoiding extra unneeded tags 
+  and metadata
+  [ichimdav #14567]
 
 4.7 - (2013-04-17)
 ------------------

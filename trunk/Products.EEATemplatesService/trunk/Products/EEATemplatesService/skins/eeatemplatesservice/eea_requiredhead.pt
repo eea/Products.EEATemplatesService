@@ -1,46 +1,21 @@
 <metal:page define-macro="header">
-<head tal:define="plone_view context/@@plone;
-    ajax_load request/ajax_load | nothing;
-        view nocall:view | nocall: plone_view;
-    ">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<!-- Forces IE8+ into newest rendering engine even if on an intranet. This has to be defined before any script/style tags. -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<!-- Disable IE6 image toolbar -->
-<meta http-equiv="imagetoolbar" content="no" />
-
-<metal:baseslot define-slot="base">
-    <base tal:attributes="href plone_view/renderBase" /><!--[if lt IE 7]></base><![endif]-->
-</metal:baseslot>
+<tal:head tal:define="plone_view context/@@plone;
+ajax_load request/ajax_load | nothing;
+    view nocall:view | nocall: plone_view;
+    templateServiceCall python:request.set('templateServiceCall', True);
+">
 
 <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
     <div tal:replace="structure provider:plone.htmlhead" />
-    <link tal:replace="structure provider:plone.htmlhead.links" />
 
     <tal:comment replace="nothing">
-        Various slots where you can insert elements in the header from a template.
+        TODO: ichimdav we should make a header macro and fill slots we don't
+        need instead of having this duplication of main_template content
     </tal:comment>
 
-    <metal:topslot define-slot="top_slot" />
-
-    <metal:headslot define-slot="head_slot"
-        tal:define="
-        charset site_properties/default_charset|string:utf-8">
-        <tal:anonymousNoBorder condition="isAnon|nothing">
-            <metal:noborder  tal:define="dummy python:request.set('disable_border',1)" />
-        </tal:anonymousNoBorder>
-    </metal:headslot>
-
-    <metal:style_slot define-slot="style_slot">
-
-    </metal:style_slot>
-
-
-    <metal:javascriptslot define-slot="javascript_head_slot" />
+    <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>
 
     <meta name="viewport" content="width=device-width; initial-scale=0.6666; maximum-scale=1.0; minimum-scale=0.6666" />
-    <meta name="generator" content="Plone - http://plone.org" />
 </tal:notajax>
-</head>
+</tal:head>
 </metal:page>

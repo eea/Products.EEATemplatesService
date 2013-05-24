@@ -1,0 +1,25 @@
+<metal:page define-macro="master"
+            tal:define="view context/@@plone;">
+    <tal:block tal:condition="python:request['jsdisable'] == 'all'">
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/design.js">
+            /* load design.js from eea */
+        </script>
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/slide.js">
+            /* load slide.js from eea */
+        </script>
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/global_searchbox.js">
+            /* load globals_searchbox.js from eea */
+        </script>
+
+    </tal:block>
+    <div id="header-holder">
+        <div id="portal-top">
+            <div tal:replace="structure provider:plone.portaltop">
+            <!-- -->
+            </div>
+        </div>
+    </div>
+</metal:page>

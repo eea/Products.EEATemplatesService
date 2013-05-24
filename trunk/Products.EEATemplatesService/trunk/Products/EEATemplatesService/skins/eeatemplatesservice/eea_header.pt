@@ -3,7 +3,7 @@
     <tal:block tal:condition="python:request['jsdisable'] == 'all'">
         <script type="text/javascript"
             tal:attributes="src string:${context/absolute_url}/design.js">
-            /* load desing.js from eea */
+            /* load design.js from eea */
         </script>
         <script type="text/javascript"
             tal:attributes="src string:${context/absolute_url}/slide.js">

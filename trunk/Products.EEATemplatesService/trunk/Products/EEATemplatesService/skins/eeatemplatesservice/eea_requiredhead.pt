@@ -1,21 +1,18 @@
 <metal:page define-macro="header">
-<tal:head tal:define="plone_view context/@@plone;
-ajax_load request/ajax_load | nothing;
-    view nocall:view | nocall: plone_view;
-    templateServiceCall python:request.set('templateServiceCall', True);
-">
 
-<tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
-    <div tal:replace="structure provider:plone.htmlhead" />
+    <tal:head tal:define="plone_view context/@@plone;
+                          ajax_load request/ajax_load | nothing;
+                          view nocall:view | nocall: plone_view;">
+        <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
+            <tal:resourceregistries>
+                <tal:styles replace="structure provider:plone.resourceregistries.styles" />
+                <tal:nojs tal:condition="python: not request.get('jsdisable')">
+                    <tal:styles replace="structure provider:plone.resourceregistries.kineticstylesheets" />
+                    <tal:scripts replace="structure provider:plone.resourceregistries.scripts" />
+                </tal:nojs>
+            </tal:resourceregistries>
+        </tal:notajax>
+        <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>
+    </tal:head>
 
-    <tal:comment replace="nothing">
-        TODO: ichimdav we should make a header macro and fill slots we don't
-        need instead of having this duplication of main_template content
-    </tal:comment>
-
-    <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>
-
-    <meta name="viewport" content="width=device-width; initial-scale=0.6666; maximum-scale=1.0; minimum-scale=0.6666" />
-</tal:notajax>
-</tal:head>
 </metal:page>

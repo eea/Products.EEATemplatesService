@@ -6,49 +6,17 @@ class ExternalTemplates(object):
     def getRequiredHead(self):
         """return required head template"""
         jsdisable = getattr(self.request, 'jsdisable', '')
-        portal_properties = { 'title' : 'Portal title' }
         self.context.REQUEST.set('jsdisable', jsdisable)
-        requiredhead = self.context.eea_requiredhead(
-                                portal_properties=portal_properties,
-                                jsdisable=jsdisable)
-
-        tree = lxml.html.fromstring(requiredhead)
-        head = tree.findall('head')[0]
-        for title in head.findall('title'):
-            head.remove(title)
-
-        for meta in head.findall('meta'):
-            if meta.get('name', '') in ('generator', 'viewport'):
-                head.remove(meta)
-
-        if jsdisable == 'all':
-            for script in head.findall('script'):
-                head.remove(script)
-
-            kss_links = ['kss-base-url', 'kinetic-stylesheet']
-            for link in head.findall('link'):
-                for link_value in link.values():
-                    if link_value in kss_links:
-                        head.remove(link)
-                        break
-
-        requiredhead = lxml.etree.tostring(tree)
+        requiredhead = self.context.eea_requiredhead(jsdisable=jsdisable)
 
         return requiredhead
 
     def getHeader(self):
         """return head template"""
-        site = getattr(self.request, 'site', 'NotProvided')
-        tabselected = getattr(self.request, 'tabselected', 'dummyselectedid')
         jsdisable = getattr(self.request, 'jsdisable', '')
         self.context.REQUEST.set('jsdisable', jsdisable)
-        if site == 'NotProvided':
-            site = getattr(self.context, 'navigationmanager_site', 'default')
 
-        header = self.context.eea_header(
-                                site=site,
-                                tabselected=tabselected,
-                                jsdisable=jsdisable)
+        header = self.context.eea_header(jsdisable=jsdisable)
 
         tree = lxml.html.fromstring(header)
         tree.make_links_absolute(self.context.absolute_url())
@@ -56,8 +24,11 @@ class ExternalTemplates(object):
         elementIdsToRemove = ['portal-personaltools-wrapper',
                                 'siteaction-login']
         for elementId in elementIdsToRemove:
-            element = tree.get_element_by_id(elementId)
-            element.getparent().remove(element)
+            # pass a string default parameter otherwise if element is not
+            # found it will return a keyError
+            element = tree.get_element_by_id(elementId, '')
+            if element:
+                element.getparent().remove(element)
 
         return lxml.etree.tostring(tree)
 

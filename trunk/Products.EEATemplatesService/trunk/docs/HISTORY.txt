@@ -6,10 +6,10 @@ Changelog
 
 4.8 - (2013-05-24)
 ------------------
-* Change: removed site related logic from getHeader since it was deprecated 
+* Change: removed site related logic from getHeader since it was deprecated
   logic
   [ichimdav #14567]
-* Bugfix: return only resources through getRequiredHead avoiding extra unneeded 
+* Bugfix: return only resources through getRequiredHead avoiding extra unneeded
   tags and metadata
   [ichimdav #14567]
 

@@ -14,10 +14,4 @@
                 replacement=".patches.manage_saveScripts"
                 preserveOriginal="true" />
 
-  <monkey:patch description="Monkeypatch portal KSS registry"
-                class="Products.ResourceRegistries.tools.KSSRegistry.KSSRegistryTool"
-                original="manage_saveKineticStylesheets"
-                replacement=".patches.manage_saveKineticStylesheets"
-                preserveOriginal="true" />
-
 </configure>

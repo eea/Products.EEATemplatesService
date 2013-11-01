@@ -32,13 +32,3 @@ def manage_saveScripts(self, REQUEST=None):
     """
     self._old_manage_saveScripts(REQUEST)
     invalidateClientsCache(self, REQUEST)
-
-security.declareProtected(permissions.ManagePortal,
-                                          'manage_saveKineticStylesheets')
-def manage_saveKineticStylesheets(self, REQUEST=None):
-    """ Save kineticstylesheets from the ZMI.
-        Updates the whole sequence. For editing and reordering.
-    """
-    self._old_manage_saveKineticStylesheets(REQUEST)
-    invalidateClientsCache(self, REQUEST)
-

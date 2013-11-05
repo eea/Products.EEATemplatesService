@@ -24,8 +24,7 @@ def manage_saveStylesheets(self, REQUEST=None):
     """
     # 1. first, a temporary patch for #17259
     if REQUEST and not REQUEST.form:
-        REQUEST.RESPONSE.redirect("%s/manage_workspace" %
-                                  self.absolute_url_path())
+        REQUEST.RESPONSE.redirect("manage_workspace")
         return
     # 2. original call:
     self._old_manage_saveStylesheets(REQUEST)
@@ -39,8 +38,7 @@ def manage_saveScripts(self, REQUEST=None):
     """
     # 1. first, a temporary patch for #17259
     if REQUEST and not REQUEST.form:
-        REQUEST.RESPONSE.redirect("%s/manage_workspace" %
-                                  self.absolute_url_path())
+        REQUEST.RESPONSE.redirect("manage_workspace")
         return
     # 2. original call:
     self._old_manage_saveScripts(REQUEST)

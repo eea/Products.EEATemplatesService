@@ -1,0 +1,18 @@
+<metal:page define-macro="header">
+
+    <tal:head tal:define="plone_view context/@@plone;
+                          ajax_load request/ajax_load | nothing;
+                          view nocall:view | nocall: plone_view;">
+        <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
+            <tal:resourceregistries>
+                <tal:styles replace="structure provider:plone.resourceregistries.styles" />
+                <tal:nojs tal:condition="python: not request.get('jsdisable')">
+                    <tal:styles replace="structure provider:plone.resourceregistries.kineticstylesheets" />
+                    <tal:scripts replace="structure provider:plone.resourceregistries.scripts" />
+                </tal:nojs>
+            </tal:resourceregistries>
+        </tal:notajax>
+        <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>
+    </tal:head>
+
+</metal:page>

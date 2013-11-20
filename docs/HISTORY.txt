@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.9-dev - (unreleased)
-----------------------
+4.9 - (2013-11-20)
+------------------
 * Bugfix: patch for losing css/js registry on submit after ac cookie expired
   [simiamih refs #17259]
 * Change: more clean up after kss removal

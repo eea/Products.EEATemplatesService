@@ -1,0 +1,5 @@
+<metal:page define-macro="master"
+            tal:define="view context/@@plone;">
+    <div tal:replace="structure provider:plone.portalfooter" />
+</metal:page>
+

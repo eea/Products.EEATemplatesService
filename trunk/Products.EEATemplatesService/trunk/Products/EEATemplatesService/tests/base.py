@@ -5,7 +5,7 @@ from Products.PloneTestCase.layer import onsetup
 from Products.Five import zcml
 from Products.Five import fiveconfigure
 import Products.EEATemplatesService
-    
+
 @onsetup
 def setup_eeacontenttypes():
     """ Setup eeacontenttypes

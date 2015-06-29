@@ -62,6 +62,6 @@ def test_suite():
     """
     return unittest.TestSuite((
         FunctionalDocFileSuite('cache.txt',
-                     test_class = CacheTestCase,
-                     package = 'Products.EEATemplatesService.browser',
-                     optionflags= OPTIONFLAGS, ), ))
+                     test_class=CacheTestCase,
+                     package='Products.EEATemplatesService.browser',
+                     optionflags=OPTIONFLAGS, ), ))

@@ -3,6 +3,8 @@ Changelog
 
 5.1.dev0 - (unreleased)
 -----------------------
+* Bugfix: adjust responsive template
+  [lucas refs #27270]
 
 5.0 - (2015-03-17)
 ------------------

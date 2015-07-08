@@ -1,5 +1,8 @@
 <metal:page define-macro="header">
-
+    <tal:noviewport tal:condition="python: not request.get('viewportdisable')">
+        <!-- viewport meta needed for proper view on an ipad -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </tal:noviewport>
     <tal:head tal:define="plone_view context/@@plone;
                           ajax_load request/ajax_load | nothing;
                           view nocall:view | nocall: plone_view;">

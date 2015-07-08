@@ -3,7 +3,7 @@ Changelog
 
 5.1.dev0 - (unreleased)
 -----------------------
-* Bugfix: adjust responsive template
+* Bug fix: adjust responsive template
   [lucas refs #27270]
 
 5.0 - (2015-03-17)
@@ -16,7 +16,7 @@ Changelog
 
 4.9 - (2013-11-20)
 ------------------
-* Bugfix: patch for losing css/js registry on submit after ac cookie expired
+* Bug fix: patch for losing css/js registry on submit after ac cookie expired
   [simiamih refs #17259]
 * Change: more clean up after kss removal
   [simiamih refs #17259]
@@ -26,15 +26,15 @@ Changelog
 * Change: removed site related logic from getHeader since it was deprecated
   logic
   [ichimdav #14567]
-* Bugfix: return only resources through getRequiredHead avoiding extra unneeded
+* Bug fix: return only resources through getRequiredHead avoiding extra unneeded
   tags and metadata
   [ichimdav #14567]
 
 4.7 - (2013-04-17)
 ------------------
-* Bugfix: remove login tab from getHeader call
+* Bug fix: remove login tab from getHeader call
   [szabozo0 refs #14002]
-* Bugfix: remove title tag, generator and viewport meta tags from getRequiredHead call
+* Bug fix: remove title tag, generator and viewport meta tags from getRequiredHead call
   [szabozo0 refs #14002]
 
 4.6 - (2012-08-27)

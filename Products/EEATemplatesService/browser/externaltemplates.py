@@ -9,7 +9,8 @@ class ExternalTemplates(object):
         self.context.REQUEST.set('jsdisable', jsdisable)
         viewportdisable = getattr(self.request, 'viewportdisable', '')
         self.context.REQUEST.set('viewportdisable', viewportdisable)
-        requiredhead = self.context.eea_requiredhead(jsdisable=jsdisable, viewportdisable=viewportdisable)
+        requiredhead = self.context.eea_requiredhead(
+            jsdisable=jsdisable, viewportdisable=viewportdisable)
 
         return requiredhead
 

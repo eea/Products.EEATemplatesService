@@ -19,13 +19,13 @@
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button aria-expanded="true" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="icon-bar">&nbsp;</span>
+                        <span class="icon-bar">&nbsp;</span>
+                        <span class="icon-bar">&nbsp;</span>
                     </button>
-                    <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse in" aria-expanded="true" style="">
+                    <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
                         <div id="portal-top">
                             <div tal:replace="structure provider:plone.portaltop">
                                 <!-- -->

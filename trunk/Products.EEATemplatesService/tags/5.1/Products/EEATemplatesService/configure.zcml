@@ -1,0 +1,14 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           i18n_domain="eea">
+
+    <include package="collective.fastview" />
+    <include package="collective.monkeypatcher" />
+
+    <include package=".browser" />
+    <include package=".upgrades" />
+
+    <include file="profiles.zcml" />
+    <include file="skins.zcml" />
+    <include file="patches.zcml" />
+
+</configure>

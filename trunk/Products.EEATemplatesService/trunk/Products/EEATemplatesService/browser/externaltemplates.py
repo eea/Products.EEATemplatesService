@@ -11,7 +11,7 @@ class ExternalTemplates(object):
         self.context.REQUEST.set('viewportdisable', viewportdisable)
         requiredhead = self.context.eea_requiredhead(
             jsdisable=jsdisable, viewportdisable=viewportdisable)
-
+        self.request.response.setHeader("Access-Control-Allow-Origin", "*")
         return requiredhead
 
     def getHeader(self):

@@ -3,6 +3,8 @@ Changelog
 
 5.2.dev0 - (unreleased)
 -----------------------
+* Fix: getRequestHead now is calleble via ajax
+  [lucas refs #27218]
 
 5.1 - (2015-07-09)
 ------------------

@@ -1,0 +1,39 @@
+<metal:page define-macro="master"
+            tal:define="view context/@@plone;">
+    <tal:block tal:condition="python:request['jsdisable'] == 'all'">
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/design.js">
+            /* load design.js from eea */
+        </script>
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/slide.js">
+            /* load slide.js from eea */
+        </script>
+        <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/global_searchbox.js">
+            /* load globals_searchbox.js from eea */
+        </script>
+
+    </tal:block>
+    <div id="header-holder">
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar">&nbsp;</span>
+                        <span class="icon-bar">&nbsp;</span>
+                        <span class="icon-bar">&nbsp;</span>
+                    </button>
+                    <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
+                        <div id="portal-top">
+                            <div tal:replace="structure provider:plone.portaltop">
+                                <!-- -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</metal:page>

@@ -1,6 +1,6 @@
 """ Cache module
 """
-import urllib
+import urllib2
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from zope.interface import implements
@@ -57,9 +57,9 @@ class ClientsCache(BrowserView):
 
             for url in external_urls:
                 try:
-                    urllib.urlopen(url)
+                    urllib2.urlopen(url, timeout=10)
                     report += 'Cache invalidated. URL: %s\r\n' % url
-                except IOError:
+                except Exception, IOError:
                     report += 'Failed to invalidate cache, URL: %s\r\n' % url
 
         return report

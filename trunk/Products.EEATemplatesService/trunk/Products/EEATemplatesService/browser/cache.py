@@ -59,7 +59,7 @@ class ClientsCache(BrowserView):
                 try:
                     urllib2.urlopen(url, timeout=10)
                     report += 'Cache invalidated. URL: %s\r\n' % url
-                except Exception, IOError:
+                except (Exception, IOError):
                     report += 'Failed to invalidate cache, URL: %s\r\n' % url
 
         return report

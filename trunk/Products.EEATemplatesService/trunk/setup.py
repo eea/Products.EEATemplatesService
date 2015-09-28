@@ -33,6 +33,7 @@ setup(
         "setuptools",
         "collective.fastview",
         "collective.monkeypatcher",
+        "eventlet",
         "lxml"
     ],
     entry_points="""

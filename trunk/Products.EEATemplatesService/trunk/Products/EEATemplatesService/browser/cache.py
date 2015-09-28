@@ -1,6 +1,6 @@
 """ Cache module
 """
-import urllib2
+from eventlet.green import urllib2
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from zope.interface import implements

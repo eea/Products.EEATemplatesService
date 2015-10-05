@@ -1,0 +1,21 @@
+<metal:page define-macro="header">
+    <tal:noviewport tal:condition="python: not request.get('viewportdisable')">
+        <!-- viewport meta needed for proper view on an ipad -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </tal:noviewport>
+    <tal:head tal:define="plone_view context/@@plone;
+                          ajax_load request/ajax_load | nothing;
+                          view nocall:view | nocall: plone_view;">
+        <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
+            <tal:resourceregistries>
+                <tal:styles replace="structure provider:plone.resourceregistries.styles" />
+                <tal:nojs tal:condition="python: not request.get('jsdisable')">
+                    <tal:styles replace="structure provider:plone.resourceregistries.kineticstylesheets" />
+                    <tal:scripts replace="structure provider:plone.resourceregistries.scripts" />
+                </tal:nojs>
+            </tal:resourceregistries>
+        </tal:notajax>
+        <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>
+    </tal:head>
+
+</metal:page>

@@ -6,6 +6,10 @@
             /* load design.js from eea */
         </script>
         <script type="text/javascript"
+            tal:attributes="src string:${context/absolute_url}/eea-responsive.js">
+            /* load eea-responsive.js from eea */
+        </script>
+        <script type="text/javascript"
             tal:attributes="src string:${context/absolute_url}/slide.js">
             /* load slide.js from eea */
         </script>

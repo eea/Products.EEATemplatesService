@@ -1,0 +1,2 @@
+<!-- ichimdav won't work until logic from NavigationManager is stable, plone4 -->
+<head metal:use-macro="here/portlet_menu/macros/portlet" />

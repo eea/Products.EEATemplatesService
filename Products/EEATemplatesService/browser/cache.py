@@ -1,10 +1,10 @@
 """ Cache module
 """
-from eventlet.green import urllib2
+from zope.interface import implements
+
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
-from zope.interface import implements
-from Products.EEATemplatesService.browser.interfaces import IClientsCache
+from eventlet.green import urllib2
 
 try:
     from plone.cachepurging.interfaces import IPurger
@@ -15,6 +15,7 @@ try:
     PLONE_APP_CACHING_INSTALLED = True
 except ImportError:
     PLONE_APP_CACHING_INSTALLED = False
+from Products.EEATemplatesService.browser.interfaces import IClientsCache
 
 class ClientsCache(BrowserView):
     """ ClientsCache BrowserView

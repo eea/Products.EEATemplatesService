@@ -1,7 +1,7 @@
 """ EEA Templates Service installer
 """
-from setuptools import setup, find_packages
 import os
+from setuptools import setup, find_packages
 
 NAME = 'Products.EEATemplatesService'
 PATH = NAME.split('.') + ['version.txt']

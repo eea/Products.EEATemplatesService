@@ -1,15 +1,10 @@
 """ DocTests
 """
-from Products.EEATemplatesService.tests import base
 import unittest
-from zope.testing import doctest
-from Testing.ZopeTestCase import FunctionalDocFileSuite
 
-#TODO: fix me, plone4
-#import time
-#from Products.CMFCore.utils import getToolByName
-#from Products.CMFSquidTool.utils import stopThreads
-#from Products.CMFSquidTool.tests.test_connections import start_proxied_server
+from Testing.ZopeTestCase import FunctionalDocFileSuite
+from zope.testing import doctest
+from Products.EEATemplatesService.tests import base
 
 OPTIONFLAGS = (doctest.REPORT_ONLY_FIRST_FAILURE |
                doctest.ELLIPSIS |

@@ -12,7 +12,7 @@ setup(
     version=VERSION,
     description="EEA Templates Service is a products that provides simple "
                 "http services for the templates of a plone site",
-    long_description=open("README.txt").read() + "\n" +
+    long_description=open("README.rst").read() + "\n" +
                      open(os.path.join("docs", "HISTORY.txt")).read(),
     url="https://svn.eionet.europa.eu/projects/"
         "Zope/browser/trunk/Products.EEATemplatesService",

@@ -13,7 +13,6 @@
     <element value="http/localhost/81/templates/getFooter" />
     <element value="http/localhost/81/templates/getBaseBreadcrumb" />
     <element value="http/localhost/81/templates/getSubNavigation" />
-    <element value="http/localhost/81/templates/getSitemap" />
   </property>
   <property name="external_urls" type="lines">
    <element

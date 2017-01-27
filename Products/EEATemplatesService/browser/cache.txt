@@ -31,7 +31,6 @@ squid: http://127.0.0.1:3128/http/localhost/81/templates/getHeader?tabselected=t
 squid: http://127.0.0.1:3128/http/localhost/81/templates/getFooter
 squid: http://127.0.0.1:3128/http/localhost/81/templates/getBaseBreadcrumb
 squid: http://127.0.0.1:3128/http/localhost/81/templates/getSubNavigation
-squid: http://127.0.0.1:3128/http/localhost/81/templates/getSitemap
 Cache invalidated. URL: http://localhost:8765/templates_client/invalidate_cache
 Failed to invalidate cache, URL: http://dummy/templates_client/invalidate_cache
 <BLANKLINE>

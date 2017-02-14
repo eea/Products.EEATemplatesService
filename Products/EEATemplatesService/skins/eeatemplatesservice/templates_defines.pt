@@ -1,4 +1,2 @@
 <metal:globaldefine define-macro="defines"
-      tal:define="
-        global portal_properties context/portal_properties;
-        " />
+      tal:define="global portal_properties context/portal_properties;" />

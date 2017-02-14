@@ -69,6 +69,9 @@ Changelog
 
 4.6 - (2012-08-27)
 ------------------
+* Bug fix: avoid adding html tags for getHeader and getFooter, thus making it
+  easier to simply insert the output within external templates
+  [ichim-david refs #82166]
 * Bug fix: remove login via lxml introduced by design feature #5443 refs #5446.
   [demarant closes #5443]
 

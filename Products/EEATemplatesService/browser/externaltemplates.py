@@ -19,8 +19,11 @@ class ExternalTemplates(object):
         jsdisable = getattr(self.request, 'jsdisable', '')
         self.context.REQUEST.set('jsdisable', jsdisable)
         header = self.context.eea_header(jsdisable=jsdisable)
-
-        tree = lxml.html.fragment_fromstring(header, create_parent='div')
+        render_full_html = getattr(self.request, 'render_full_html', True)
+        if not render_full_html:
+            tree = lxml.html.fragment_fromstring(header, create_parent='div')
+        else:
+            tree = lxml.html.tostring(header)
         tree.make_links_absolute(self.context.absolute_url())
         #remove the plone login which should never be used by external systems.
         elementIdsToRemove = ['portal-personaltools-wrapper',
@@ -38,7 +41,11 @@ class ExternalTemplates(object):
         """return footer template"""
         footer = self.context.eea_footer()
 
-        tree = lxml.html.fragment_fromstring(footer, create_parent='div')
+        render_full_html = getattr(self.request, 'render_full_html', True)
+        if not render_full_html:
+            tree = lxml.html.fragment_fromstring(header, create_parent='div')
+        else:
+            tree = lxml.html.tostring(header)
         links_to_remove = ['CMS login',
                             'Refresh this page',
                             'http://svn.eionet.europa.eu/projects/Zope/'+

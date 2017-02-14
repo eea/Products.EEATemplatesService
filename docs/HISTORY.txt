@@ -3,6 +3,10 @@ Changelog
 
 5.7.dev0 - (unreleased)
 -----------------------
+* Change: added render_full_html parameter to getFooter and getHeader
+  which if passed with False will render only the template markup
+  instead of containing the html, head and body tag
+  [ichim-david refs #82166]
 
 5.6 - (2017-01-30)
 ------------------

@@ -43,9 +43,9 @@ class ExternalTemplates(object):
 
         render_full_html = getattr(self.request, 'render_full_html', True)
         if render_full_html == 'False':
-            tree = lxml.html.fragment_fromstring(header, create_parent='div')
+            tree = lxml.html.fragment_fromstring(footer, create_parent='div')
         else:
-             tree = lxml.html.fromstring(header)
+            tree = lxml.html.fromstring(footer)
         links_to_remove = ['CMS login',
                             'Refresh this page',
                             'http://svn.eionet.europa.eu/projects/Zope/'+

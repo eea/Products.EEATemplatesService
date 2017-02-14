@@ -23,7 +23,7 @@ class ExternalTemplates(object):
         if not render_full_html:
             tree = lxml.html.fragment_fromstring(header, create_parent='div')
         else:
-            tree = lxml.html.tostring(header)
+            tree = lxml.html.fromstring(header)
         tree.make_links_absolute(self.context.absolute_url())
         #remove the plone login which should never be used by external systems.
         elementIdsToRemove = ['portal-personaltools-wrapper',
@@ -45,7 +45,7 @@ class ExternalTemplates(object):
         if not render_full_html:
             tree = lxml.html.fragment_fromstring(header, create_parent='div')
         else:
-            tree = lxml.html.tostring(header)
+            tree = lxml.html.fromstring(header)
         links_to_remove = ['CMS login',
                             'Refresh this page',
                             'http://svn.eionet.europa.eu/projects/Zope/'+

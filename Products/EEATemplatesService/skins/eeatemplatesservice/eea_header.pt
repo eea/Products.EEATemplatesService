@@ -2,18 +2,13 @@
             tal:define="view context/@@plone;">
     <tal:block tal:condition="python:request['jsdisable'] == 'all'">
         <script type="text/javascript"
-            tal:attributes="src string:${context/absolute_url}/design.js">
-        </script>
+            tal:attributes="src string:${context/absolute_url}/design.js" />
         <script type="text/javascript"
-            tal:attributes="src string:${context/absolute_url}/eea-responsive.js">
-        </script>
+            tal:attributes="src string:${context/absolute_url}/eea-responsive.js" />
         <script type="text/javascript"
-            tal:attributes="src string:${context/absolute_url}/slide.js">
-        </script>
+            tal:attributes="src string:${context/absolute_url}/slide.js" />
         <script type="text/javascript"
-            tal:attributes="src string:${context/absolute_url}/global_searchbox.js">
-        </script>
-
+            tal:attributes="src string:${context/absolute_url}/global_searchbox.js" />
     </tal:block>
     <div id="header-holder">
         <div class="navbar navbar-default navbar-fixed-top">

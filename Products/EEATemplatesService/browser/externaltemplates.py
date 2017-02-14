@@ -19,7 +19,7 @@ class ExternalTemplates(object):
         jsdisable = getattr(self.request, 'jsdisable', '')
         self.context.REQUEST.set('jsdisable', jsdisable)
         header = self.context.eea_header(jsdisable=jsdisable)
-        render_full_html = getattr(self.request, 'render_full_html', True)
+        render_full_html = getattr(self.request, 'render_full_html', '')
         if render_full_html == 'False':
             tree = lxml.html.fragment_fromstring(header, create_parent='div')
         else:
@@ -40,8 +40,7 @@ class ExternalTemplates(object):
     def getFooter(self):
         """return footer template"""
         footer = self.context.eea_footer()
-
-        render_full_html = getattr(self.request, 'render_full_html', True)
+        render_full_html = getattr(self.request, 'render_full_html', '')
         if render_full_html == 'False':
             tree = lxml.html.fragment_fromstring(footer, create_parent='div')
         else:

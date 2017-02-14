@@ -20,7 +20,7 @@ class ExternalTemplates(object):
         self.context.REQUEST.set('jsdisable', jsdisable)
         header = self.context.eea_header(jsdisable=jsdisable)
         render_full_html = getattr(self.request, 'render_full_html', True)
-        if not render_full_html:
+        if render_full_html == 'False':
             tree = lxml.html.fragment_fromstring(header, create_parent='div')
         else:
             tree = lxml.html.fromstring(header)
@@ -42,10 +42,10 @@ class ExternalTemplates(object):
         footer = self.context.eea_footer()
 
         render_full_html = getattr(self.request, 'render_full_html', True)
-        if not render_full_html:
+        if render_full_html == 'False':
             tree = lxml.html.fragment_fromstring(header, create_parent='div')
         else:
-            tree = lxml.html.fromstring(header)
+             tree = lxml.html.fromstring(header)
         links_to_remove = ['CMS login',
                             'Refresh this page',
                             'http://svn.eionet.europa.eu/projects/Zope/'+

@@ -13,6 +13,28 @@
                     <tal:styles replace="structure provider:plone.resourceregistries.kineticstylesheets" />
                     <tal:scripts replace="structure provider:plone.resourceregistries.scripts" />
                 </tal:nojs>
+                <tal:block tal:condition="python:request['jsdisable'] == 'all'">
+                    <script type="text/javascript"
+                        tal:attributes="src string:${context/absolute_url}/design.js">
+                        /* load design.js from eea */
+                    </script>
+                    <script type="text/javascript"
+                        tal:attributes="src string:${context/absolute_url}/eea-responsive.js">
+                        /* load eea-responsive.js from eea */
+                    </script>
+                    <script type="text/javascript"
+                            tal:attributes="src string:${context/absolute_url}/slide.js">
+                        /* load slide.js from eea */
+                    </script>
+                    <script type="text/javascript"
+                        tal:attributes="src string:${context/absolute_url}/global_searchbox.js">
+                        /* load globals_searchbox.js from eea */
+                    </script>
+                    <script type="text/javascript"
+                        tal:attributes="src string:${context/absolute_url}/ga.js">
+                        /* load google analytics ga.js from eea */
+                    </script>
+                </tal:block>
             </tal:resourceregistries>
         </tal:notajax>
         <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>

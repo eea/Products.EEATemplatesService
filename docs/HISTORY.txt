@@ -3,6 +3,9 @@ Changelog
 
 5.8.dev0 - (unreleased)
 -----------------------
+* Bugfix: Add the EEA Google Analytics as a required js so that it is on all elastic apps.
+  Moved required js in getRequiredHead where it should be.
+  [demarant refs #83417]
 
 5.7 - (2017-02-14)
 ------------------

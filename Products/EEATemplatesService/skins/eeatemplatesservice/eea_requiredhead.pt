@@ -5,6 +5,7 @@
     </tal:noviewport>
     <tal:head tal:define="plone_view context/@@plone;
                           ajax_load request/ajax_load | nothing;
+                          portal_url context/@@plone_portal_state/portal_url;
                           view nocall:view | nocall: plone_view;">
         <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
             <tal:resourceregistries>
@@ -15,25 +16,37 @@
                 </tal:nojs>
                 <tal:block tal:condition="python:request['jsdisable'] == 'all'">
                     <script type="text/javascript"
-                        tal:attributes="src string:${context/absolute_url}/design.js">
-                        /* load design.js from eea */
+                        tal:attributes="src string:${portal_url}/ga.js">
+                        /* load google analytics ga.js from eea */
+                    </script>
+
+                    <script type="text/javascript"
+                        tal:attributes="src string:${}/++resource++jquery.screentime.js">
+                        /* load jquery.screentime from eea */
+                    </script>
+
+                    <script type="text/javascript"
+                        tal:attributes="src string:${}/++resource++jquery.scrolldepth/jquery.scrolldepth.js">
+                        /* load jquery.scrolldepth from eea */
                     </script>
                     <script type="text/javascript"
-                        tal:attributes="src string:${context/absolute_url}/eea-responsive.js">
-                        /* load eea-responsive.js from eea */
-                    </script>
-                    <script type="text/javascript"
-                            tal:attributes="src string:${context/absolute_url}/slide.js">
+                            tal:attributes="src string:${portal_url}/slide.js">
                         /* load slide.js from eea */
                     </script>
                     <script type="text/javascript"
-                        tal:attributes="src string:${context/absolute_url}/global_searchbox.js">
+                        tal:attributes="src string:${portal_url}/global_searchbox.js">
                         /* load globals_searchbox.js from eea */
                     </script>
+
                     <script type="text/javascript"
-                        tal:attributes="src string:${context/absolute_url}/ga.js">
-                        /* load google analytics ga.js from eea */
+                        tal:attributes="src string:${portal_url}/design.js">
+                        /* load design.js from eea */
                     </script>
+                    <script type="text/javascript"
+                        tal:attributes="src string:${portal_url}/eea-responsive.js">
+                        /* load eea-responsive.js from eea */
+                    </script>
+
                 </tal:block>
             </tal:resourceregistries>
         </tal:notajax>

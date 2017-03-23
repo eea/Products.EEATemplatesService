@@ -1,5 +1,6 @@
 """ Cache module
 """
+# pylint: disable=R0101
 from zope.interface import implements
 
 from Products.CMFCore.utils import getToolByName

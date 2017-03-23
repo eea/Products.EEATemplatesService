@@ -1,5 +1,6 @@
 """ DocTests
 """
+# pylint: disable=W0511
 import unittest
 
 from Testing.ZopeTestCase import FunctionalDocFileSuite
@@ -14,7 +15,7 @@ class CacheTestCase(base.EEATemplatesService):
     """ CacheTestCase test class
     """
 
-    #TODO: we dont use Products.CMFSquidTool anymore, plone4
+    # TODO: we dont use Products.CMFSquidTool anymore, plone4
     #def afterSetUp(self):
         #""" afterSetUp test method
         #"""

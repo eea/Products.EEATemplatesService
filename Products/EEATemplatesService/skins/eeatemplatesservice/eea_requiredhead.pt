@@ -21,15 +21,6 @@
                     </script>
 
                     <script type="text/javascript"
-                        tal:attributes="src string:${portal_url}/++resource++jquery.screentime.js">
-                        /* load jquery.screentime from eea */
-                    </script>
-
-                    <script type="text/javascript"
-                        tal:attributes="src string:${portal_url}/++resource++jquery.scrolldepth/jquery.scrolldepth.js">
-                        /* load jquery.scrolldepth from eea */
-                    </script>
-                    <script type="text/javascript"
                             tal:attributes="src string:${portal_url}/slide.js">
                         /* load slide.js from eea */
                     </script>

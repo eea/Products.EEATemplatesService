@@ -1,6 +1,9 @@
 Changelog
 =========
 
+5.9.dev0 - (unreleased)
+-----------------------
+
 5.8 - (2017-03-27)
 ------------------
 * Bugfix: Add the EEA Google Analytics as a required js so that it is on all elastic apps.

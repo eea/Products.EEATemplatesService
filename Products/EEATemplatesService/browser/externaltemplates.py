@@ -64,4 +64,3 @@ class ExternalTemplates(object):
         for (k, v) in links.items():
             v.remove(k)
         return lxml.etree.tostring(tree)
-

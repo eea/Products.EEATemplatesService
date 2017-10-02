@@ -3,6 +3,14 @@ Changelog
 
 6.1.dev0 - (unreleased)
 -----------------------
+* Feature: added cssonly option to getRequiredHead?cssonly=true
+  which if passed will only output the css for the eea header since we should
+  have the ability to output css in a different position from the js
+  [ichim-david refs #88482]
+* Feature: added jsonly option to getRequiredHead?jsonly=true
+  which if passed will only output the js for the eea header since we should
+  have the ability to output js in a different position from the css
+  [ichim-david refs #88482]
 * Feature: added js_libs list property to template_service portal_properties which
   if added will override the js resources that will be concatenated when calling
   external_templates_scripts.js browserView
@@ -67,7 +75,7 @@ Changelog
 ------------------
 * Change: Switched to curl in the jenkins build install script
   [olimpiurob refs #22402]
-* Change: Changed fetch url for jenkins build install script to the install 
+* Change: Changed fetch url for jenkins build install script to the install
   script from the main EEA CPB repository
   [olimpiurob refs #22402]
 

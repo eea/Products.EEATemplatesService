@@ -23,4 +23,12 @@
                 class=".externaltemplates.ExternalTemplates"
                 attribute="getFooter"
                 permission="zope.Public" />
+
+  <browser:page
+    for="*"
+    name="external_templates_scripts.js"
+    class=".javascript.ViewJavascript"
+    permission="zope.Public"
+  />
+
 </configure>

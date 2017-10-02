@@ -3,6 +3,10 @@ Changelog
 
 6.1.dev0 - (unreleased)
 -----------------------
+* Feature: added js_libs list property to template_service portal_properties which
+  if added will override the js resources that will be concatenated when calling
+  external_templates_scripts.js browserView
+  [ichim-david refs #88482]
 
 6.0 - (2017-05-22)
 ------------------

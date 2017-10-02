@@ -19,6 +19,7 @@ class Javascript(object):
         self.duration = 3600*24*365
 
         self.jstool = getToolByName(context, 'portal_javascripts')
+        self.pprops = getToolByName(context, 'portal_properties')
         self.debug = self.jstool.getDebugMode()
 
     @property
@@ -77,11 +78,14 @@ class ViewJavascript(Javascript):
     def js_libs(self):
         """ JS Libs
         """
-        return ['ga.js',
+        fallback = ['ga.js',
                 'slide.js',
                 'global_searchbox.js',
                 'design.js',
                 'eea-responsive.js']
+        tservice = getattr(self.pprops, 'template_service')
+        val = getattr(tservice, 'js_libs')
+        return val or fallback
 
     @property
     def resources(self):

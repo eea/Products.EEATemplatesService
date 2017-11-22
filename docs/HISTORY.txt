@@ -3,6 +3,8 @@ Changelog
 
 6.2.dev0 - (unreleased)
 -----------------------
+* Change: eea_header.pt merged from /custom
+  [alecghica refs #89967]
 
 6.1 - (2017-11-07)
 ------------------

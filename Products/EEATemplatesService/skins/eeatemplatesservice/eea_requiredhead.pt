@@ -28,5 +28,4 @@
             </tal:resourceregistries>
         </tal:notajax>
     </tal:head>
-
 </metal:page>

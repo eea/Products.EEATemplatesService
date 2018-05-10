@@ -848,13 +848,11 @@
    <element value="/templates/tr/getSubNavigation?tabselected=themes"/>
   </property>
   <property name="external_urls" type="lines">
-   <element value="http://sparrow.eea.europa.eu/templates_client/invalidate_cache"/>
-   <element value="http://sparrow.eea.europa.eu:38180/templates_client/invalidate_cache"/>
-   <element value="http://sparrow.eea.europa.eu:38081/templates_client/invalidate_cache"/>
-   <element value="http://sparrow.eea.europa.eu:38280/templates_client/invalidate_cache"/>
-   <element value="http://dataservice.eea.europa.eu/pivotapp?refresh=1"/>
+   <element value="http://community.eea.europa.eu/invalidateCache"/>
    <element value="http://eunis.eea.europa.eu/refreshtemplate"/>
-   <element value="http://www.eea.europa.eu/themes/climate/pam/refreshtemplate"/>
+   <element value="http://semantic.eea.europa.eu/refreshtemplate"/>
+   <element value="http://search.apps.eea.europa.eu/invalidate_templates"/>
+   <element value="http://pam.apps.eea.europa.eu/invalidate_templates"/>
   </property>
  </object>
 </object>

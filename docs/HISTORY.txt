@@ -3,6 +3,8 @@ Changelog
 
 6.3.dev0 - (unreleased)
 -----------------------
+* Change: removed old invalidate cache methods.
+  [alecghica refs #95020]
 
 6.2 - (2017-12-12)
 ------------------

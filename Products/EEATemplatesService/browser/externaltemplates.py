@@ -45,10 +45,7 @@ class ExternalTemplates(object):
             tree = lxml.html.fragment_fromstring(footer, create_parent='div')
         else:
             tree = lxml.html.fromstring(footer)
-        links_to_remove = ['CMS login',
-                            'Refresh this page',
-                            'http://svn.eionet.europa.eu/projects/Zope/'+
-                            'browser/trunk/www.eea.europa.eu/trunk/docs']
+        links_to_remove = ['CMS login', 'Software updates history']
         links = {}
         iterator = tree.iter()
         while True:

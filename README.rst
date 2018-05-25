@@ -1,8 +1,12 @@
 =====================
 EEA Template Services
 =====================
-.. image:: http://ci.eionet.europa.eu/job/eea/job/Products.EEATemplatesService/job/master/badge/icon
-  :target: http://ci.eionet.europa.eu/job/eea/job/Products.EEATemplatesService/job/master/display/redirect
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/Products.EEATemplatesService/develop
+  :target: https://ci.eionet.europa.eu/job/eea/job/Products.EEATemplatesService/job/develop/display/redirect
+  :alt: Develop
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/Products.EEATemplatesService/master
+  :target: https://ci.eionet.europa.eu/job/eea/job/Products.EEATemplatesService/job/master/display/redirect
+  :alt: Master
 
 EEATemplatesService is a product that provieds simple HTTP service for the
 templates from the plone site.

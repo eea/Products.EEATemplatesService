@@ -5,6 +5,8 @@ Changelog
 ---------------------
 * Change: updated URLs pointing to eea.europa.eu with https://
   [alecghica refs #95849]
+* Change: updated patches
+  [alecghica refs #97573]
 
 6.3 - (2018-05-24)
 -----------------------

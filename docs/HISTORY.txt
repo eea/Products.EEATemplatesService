@@ -1,6 +1,13 @@
 Changelog
 =========
 
+6.4 - (2018-08-17)
+---------------------
+* Change: updated URLs pointing to eea.europa.eu with https://
+  [alecghica refs #95849]
+* Change: updated patches
+  [alecghica refs #97573]
+
 6.3 - (2018-05-24)
 -----------------------
 * Change: replaced the old invalidate cache method footer.
@@ -181,4 +188,3 @@ Changelog
 1.0
 ---
 * Generated skeleton product from DIYPloneStyle.
-

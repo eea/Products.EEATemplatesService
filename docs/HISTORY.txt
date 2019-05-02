@@ -1,8 +1,13 @@
 Changelog
 =========
 
-6.6-dev0 - (unreleased)
----------------------
+7.0 - (2019-05-02)
+------------------
+* Upgrade step: Within "Plone > Site setup > Add-ons" click on
+  upgrade button available for EEA Templates Service
+  [avoinea refs #102916]
+* Feature: Template v3
+  [avoinea refs #102916]
 
 6.5 - (2019-01-28)
 ---------------------

@@ -169,5 +169,12 @@
    <element value="design.js"/>
    <element value="eea-responsive.js"/>
   </property>
+
+  <property name="css_libs" type="lines">
+   <element value="eea-icons.css"/>
+   <element value="eea-globaltabs.css"/>
+   <element value="footer.css"/>
+   <element value="eea-responsive-templateservice.css"/>
+  </property>
  </object>
 </object>

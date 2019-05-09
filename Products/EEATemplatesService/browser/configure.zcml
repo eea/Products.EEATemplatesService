@@ -27,7 +27,7 @@
   <browser:page
     for="*"
     name="external_templates_styles.css"
-    class=".javascript.ViewCSS"
+    class=".css.ViewCSS"
     permission="zope.Public"
   />
 

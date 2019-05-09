@@ -31,32 +31,8 @@ class CSS(object):
     def get_resource(self, resource):
         """ Get resource content
         """
-        # If resources are retrieved via GET, the request headers
-        # are used for caching AND are mangled.
-        # That can result in getting 304 responses
-        # There is no API to extract the data from the view without
-        # mangling the headers, so we must use a fake request
-        # that can be modified without harm
-        if resource.startswith('++resource++'):
-            fake_request = TestRequest()
-            # copy interfaces that may have been applied to the request to
-            # the TestRequest:
-            directlyProvides(fake_request, directlyProvidedBy(self.request))
-            traverser = getMultiAdapter((self.context, fake_request),
-                                        name='resource')
-            obj = traverser.traverse(resource[12:], None)
-        else:
-            obj = self.context.restrictedTraverse(resource, None)
-        if not obj:
-            return '/* ERROR */'
-        try:
-            content = obj.GET()
-        except AttributeError, err:
-            return str(obj)
-        except Exception, err:
-            return '/* ERROR: %s */' % err
-        else:
-            return content
+        content = self.csstool.getResourceContent(resource, self.context)
+        return content
 
     def get_content(self, **kwargs):
         """ Get content
@@ -64,10 +40,9 @@ class CSS(object):
         output = []
         for resource in self.resources:
             content = self.get_resource(resource)
-            header = '\n/* - %s - */\n' % resource
             if not self.debug:
                 content = CSSPacker('safe').pack(content)
-            output.append(header + content)
+            output.append(content)
         return '\n'.join(output)
 
 

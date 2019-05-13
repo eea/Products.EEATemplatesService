@@ -162,19 +162,21 @@
       value="https://sdi.eea.europa.eu/catalogue/srv/api/eealayoutupdate/refreshtemplate"/>
   </property>
   <property name="js_libs" type="lines">
+    <element value="raven.js"/>
    <element value="ga.js"/>
    <element value="++resource++plone.app.jquerytools.tooltip.js"/>
    <element value="slide.js"/>
    <element value="global_searchbox.js"/>
-   <element value="design.js"/>
    <element value="eea-responsive.js"/>
   </property>
 
   <property name="css_libs" type="lines">
    <element value="eea-icons.css"/>
    <element value="eea-globaltabs.css"/>
-   <element value="footer.css"/>
-   <element value="eea-responsive-templateservice.css"/>
+    <element value="design-elements.css"/>
+    <element value="footer.css"/>
+    <element value="eea-responsive-templateservice.css"/>
+    <element value="utilities.css"/>
   </property>
  </object>
 </object>

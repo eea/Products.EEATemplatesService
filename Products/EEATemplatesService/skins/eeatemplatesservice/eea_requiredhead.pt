@@ -9,12 +9,22 @@
                           view nocall:view | nocall: plone_view;">
         <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
             <tal:resourceregistries>
-                <tal:css tal:condition="python: not request.get('jsonly') and not request.get('cssonly') == 'external_templates'">
+                <tal:css tal:condition="python: not request.get('jsonly') and not request.get('css_stack') == 'external_templates'">
                     <tal:styles replace="structure provider:plone.resourceregistries.styles" />
+                    <link rel="stylesheet" tal:attributes="href string:${portal_url}/external_templates_custom.css" />
                 </tal:css>
 
-                <tal:block tal:condition="python:request.get('cssonly') == 'external_templates'">
-                    <link rel="stylesheet" tal:attributes="src string:${portal_url}/external_templates_styles.css" />
+                <tal:block tal:condition="python:request.get('css_stack') == 'external_templates'">
+                    <style tal:content="structure context/critical.css">
+                    </style>
+
+                    <link rel="stylesheet"
+                         tal:attributes="href string:${portal_url}/external_templates_styles.css;
+                          rel string:preload;
+                          as string:style;"
+                          onload="this.onload=null;this.rel='stylesheet'" />
+
+                    <link rel="stylesheet" tal:attributes="href string:${portal_url}/external_templates_custom.css" />
                 </tal:block>
 
                 <tal:onlycss tal:condition="python: not request.get('cssonly')">

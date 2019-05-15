@@ -2,9 +2,6 @@
 """
 from App.Common import rfc1123_date
 from DateTime import DateTime
-from zope.component import getMultiAdapter
-from zope.interface import directlyProvidedBy, directlyProvides
-from zope.publisher.browser import TestRequest
 from Products.CMFCore.utils import getToolByName
 from Products.ResourceRegistries.tools.packer import CSSPacker
 

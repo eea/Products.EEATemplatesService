@@ -175,8 +175,8 @@
   <property name="css_libs" type="lines">
    <element value="eea-icons.css"/>
    <element value="eea-globaltabs.css"/>
-   <element value="footer.css"/>
    <element value="design-elements.css"/>
+   <element value="footer.css"/>
    <element value="eea-responsive-templateservice.css"/>
    <element value="utilities.css"/>
   </property>

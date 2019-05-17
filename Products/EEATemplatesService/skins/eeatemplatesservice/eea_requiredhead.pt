@@ -41,10 +41,16 @@
                         <tal:scripts replace="structure provider:plone.resourceregistries.scripts" />
                     </tal:nojs>
                     <tal:block tal:condition="python:request['jsdisable'] == 'all'">
+
+                        <tal:block tal:condition="python:request.get('css_stack')">
+                            <script type="text/javascript" tal:content="structure context/loadcss.js">
+                            </script>
+                        </tal:block>
                         <script type="text/javascript" defer async
                             tal:attributes="src string:${portal_url}/external_templates_scripts.js">
                             /* load minimum js concatenated from eea */
                         </script>
+
                     </tal:block>
                     <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>
                 </tal:onlycss>

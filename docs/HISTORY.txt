@@ -14,6 +14,8 @@ Changelog
   view which can be used to register css that can be
   packed into a single css file
   [ichim-david refs #105453]
+* Change: jslint ignores
+  [alecghica refs #105453]
 
 
 7.0 - (2019-05-02)

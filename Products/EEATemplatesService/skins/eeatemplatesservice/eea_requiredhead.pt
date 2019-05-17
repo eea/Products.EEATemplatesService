@@ -11,7 +11,11 @@
             <tal:resourceregistries>
                 <tal:css tal:condition="python: not request.get('jsonly') and not request.get('css_stack') == 'external_templates'">
                     <tal:styles replace="structure provider:plone.resourceregistries.styles" />
-                    <link rel="stylesheet" tal:attributes="href string:${portal_url}/external_templates_custom.css" />
+                    <link rel="stylesheet"
+                             tal:attributes="href string:${portal_url}/external_templates_custom.css;
+                            rel string:preload;
+                            as string:style;"
+                          onload="this.onload=null;this.rel='stylesheet'" />
                 </tal:css>
 
                 <tal:block tal:condition="python:request.get('css_stack') == 'external_templates'">
@@ -24,7 +28,11 @@
                           as string:style;"
                           onload="this.onload=null;this.rel='stylesheet'" />
 
-                    <link rel="stylesheet" tal:attributes="href string:${portal_url}/external_templates_custom.css" />
+                    <link rel="stylesheet"
+                             tal:attributes="href string:${portal_url}/external_templates_custom.css;
+                            rel string:preload;
+                            as string:style;"
+                          onload="this.onload=null;this.rel='stylesheet'" />
                 </tal:block>
 
                 <tal:onlycss tal:condition="python: not request.get('cssonly')">

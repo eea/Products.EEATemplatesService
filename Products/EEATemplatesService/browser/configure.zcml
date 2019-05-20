@@ -26,6 +26,13 @@
 
   <browser:page
     for="*"
+    name="external_templates_styles.css"
+    class=".css.ViewCSS"
+    permission="zope.Public"
+  />
+
+  <browser:page
+    for="*"
     name="external_templates_scripts.js"
     class=".javascript.ViewJavascript"
     permission="zope.Public"

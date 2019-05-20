@@ -9,19 +9,48 @@
                           view nocall:view | nocall: plone_view;">
         <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
             <tal:resourceregistries>
-                <tal:js tal:condition="python: not request.get('jsonly')">
+                <tal:css tal:condition="python: not request.get('jsonly') and not request.get('css_stack') == 'external_templates'">
                     <tal:styles replace="structure provider:plone.resourceregistries.styles" />
-                </tal:js>
+                    <link rel="stylesheet"
+                             tal:attributes="href string:${portal_url}/external_templates_custom.css;
+                            rel string:preload;
+                            as string:style;"
+                          onload="this.onload=null;this.rel='stylesheet'" />
+                </tal:css>
+
+                <tal:block tal:condition="python:request.get('css_stack') == 'external_templates'">
+                    <style tal:content="structure context/critical.css">
+                    </style>
+
+                    <link rel="stylesheet"
+                         tal:attributes="href string:${portal_url}/external_templates_styles.css;
+                          rel string:preload;
+                          as string:style;"
+                          onload="this.onload=null;this.rel='stylesheet'" />
+
+                    <link rel="stylesheet"
+                             tal:attributes="href string:${portal_url}/external_templates_custom.css;
+                            rel string:preload;
+                            as string:style;"
+                          onload="this.onload=null;this.rel='stylesheet'" />
+                </tal:block>
+
                 <tal:onlycss tal:condition="python: not request.get('cssonly')">
                     <tal:nojs tal:condition="python: not request.get('jsdisable')">
                         <tal:styles replace="structure provider:plone.resourceregistries.kineticstylesheets" />
                         <tal:scripts replace="structure provider:plone.resourceregistries.scripts" />
                     </tal:nojs>
                     <tal:block tal:condition="python:request['jsdisable'] == 'all'">
-                        <script type="text/javascript"
+
+                        <tal:block tal:condition="python:request.get('css_stack')">
+                            <script type="text/javascript" tal:content="structure context/loadcss.js">
+                            </script>
+                        </tal:block>
+                        <script type="text/javascript" defer async
                             tal:attributes="src string:${portal_url}/external_templates_scripts.js">
                             /* load minimum js concatenated from eea */
                         </script>
+
                     </tal:block>
                     <script type="text/javascript" tal:content="string: context_url='${context/absolute_url}';"></script>
                 </tal:onlycss>

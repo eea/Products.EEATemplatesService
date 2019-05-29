@@ -1,7 +1,7 @@
 Changelog
 =========
 
-7.2-dev0 - (unreleased)
+7.2 - (2019-05-29)
 ---------------------
 * Upgrade step: Within "Plone > Site setup > Add-ons" click on
   upgrade button available for EEA Templates Service

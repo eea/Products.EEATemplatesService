@@ -39,10 +39,11 @@ setup(
     zip_safe=False,
     install_requires=[
         "setuptools",
+        "eventlet",
+        "lxml",
         "collective.fastview",
         "collective.monkeypatcher",
-        "eventlet",
-        "lxml"
+        "eea.sentry"
     ],
     entry_points="""
     # -*- Entry points: -*-

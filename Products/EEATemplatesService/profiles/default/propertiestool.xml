@@ -162,7 +162,7 @@
       value="https://sdi.eea.europa.eu/catalogue/srv/api/eealayoutupdate/refreshtemplate"/>
   </property>
   <property name="js_libs" type="lines">
-   <element value="raven.min.js"/>
+   <element value="++resource++raven.min.js"/>
    <element value="ga.js"/>
    <element value="++resource++plone.app.jquerytools.tooltip.js"/>
    <element value="slide.js"/>

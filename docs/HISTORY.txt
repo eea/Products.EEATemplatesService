@@ -1,6 +1,14 @@
 Changelog
 =========
 
+7.2 - (2019-05-29)
+---------------------
+* Upgrade step: Within "Plone > Site setup > Add-ons" click on
+  upgrade button available for EEA Templates Service
+  [avoinea refs #104872]
+* Change: Include raven.min.js from eea.sentry within external_templates_scripts.js
+  [avoinea refs #104872]
+
 7.1 - (2019-05-20)
 ---------------------
 * Upgrade step: Within "Plone > Site setup > Add-ons" click on
